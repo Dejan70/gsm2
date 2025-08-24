@@ -1,0 +1,2884 @@
+<!DOCTYPE html> 
+      
+<html lang="en">
+<head>
+  <title>Food Packaging</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+
+
+  <!--link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+ <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" >
+
+<!--script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script-->
+
+
+
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script-->
+  <script src="./Chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  /*
+  .jumbotron text-center {
+    height: 20px;
+}
+*/
+    .container {
+      /*  max-width: (1900px - @grid-gutter-width);   */
+      width: 90%;
+    min-width: 99%;
+    max-width: 100%;
+    margin-left: 7px;
+  /*  margin-right: 15px;    */
+    }
+  </style>
+</head>
+<body onload="myFunction1(),myFunction2()">  
+  <script>
+
+
+    var donut=5;
+    var socket = io();
+
+    socket.on('message', function(msg){
+    //  console.log(msg);
+    //  console.log("msg");
+
+     // document.getElementById("1_1_6_1").innerHTML = msg;
+  //   document.getElementById("1_1_6_1").innerHTML = msg[0].num;
+    // console.log("msg.num",msg[0].num);
+     donut=msg[0].donut;
+   //  console.log("donut",msg[0].donut);
+     chart1();
+    });
+     </script>
+
+
+
+
+
+    <!--div c  ass="jumbotron text-center" style="margin-bottom:0; height: 80px;"-->
+<!--div class="jumbotron text-center" style="height: 5vh;margin-top: -25px;"-->
+  <h6 style="margin-top:5px">  <button class="save" mat-raised-button style=" background-COLOR:#222a2a00; bORDER-COLOR: rgb(119, 140, 185);color:#626C81;  position: absolute;  right: 0; "  onclick="toggleFullScreen()">Full</button><!--RADI BUTTON U FLEXU--> 
+  </h6>
+
+  <!--p>Resize this responsive page to see the effect!</p--> 
+<!--/div-->
+<!--Ajvar pocetak*******************************************************************************-->
+<button id="addBtn201" class="btn btn-sm btn-primary">/b201</button>
+<button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+<button id="addBtn203" class="btn btn-sm btn-primary">/b203</button>
+<button id="addBtn204" class="btn btn-sm btn-primary">/b204</button>
+ <!--     DIV1 SPA  -->
+<div class="overlay"  id="div1">
+
+<style>
+.overlay{
+    opacity:0.9;
+ /*   background-color:#ccc;    */
+    position:fixed;
+    width:100%;
+    height:90%;
+    top:40px;
+    left:0px;
+    z-index:1000;
+}
+</style>
+<div class="row" name="aj"style="height: 55vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn5" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200" class="btn btn-sm btn-primary">/b200</button>
+
+        <h4 id="1500"style="font-weight: bold;">PLC 15</h4>
+        <!--p id="1500">1500 10</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <input
+        type="datetime-local"
+        id="meeting-time"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" />
+       <!--NEW   INPUT-->
+       <input
+       type="datetime-local"
+       id="meeting-time1"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" />
+         </div>
+    <!--option   start--><div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+   document.getElementById("text1").readOnly = true;
+ //  document.getElementById("text1").innerHTML = "neki textyxcyxcycxycyxcyxcyxcyxcycxyxcyccycycyxcyxc";
+ document.getElementById("text1").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1500', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1500").style.color = '#03fc66';
+});
+socket.on('conn_1500b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1500").style.color = 'red'; 
+});
+socket.on('conn_1200', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = '#b1fc03';
+});
+socket.on('conn_1200b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = 'red'; 
+});
+socket.on('plc3', function(msg){
+  var table = document.getElementById("table");
+//table.rows[2].getElementsByTagName("td")[4].style.backgroundColor = '#CFB6BF';
+
+//table.rows[3].style.backgroundColor = '#CFB6BF';
+
+
+
+});
+socket.on('plc', function(msg){
+
+  console.log("socket");
+  console.log(msg);
+  console.log("msg");
+
+
+});
+
+</script>
+
+
+<button id="addBtn15" class="btn btn-sm btn-primary">Data_1</button>
+
+<!--button id="addBtn16" class="btn btn-sm btn-primary">off</button><button id="addBtn17" class="btn btn-sm btn-primary">on</button-->
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab1">
+    <caption>
+      Parts by Hours Line 1
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 1</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+//table js
+//document.getElementById("tab1").rows[0].cells[0].innerHTML=777;
+//document.getElementById("tab1").rows[0].height=55;
+
+//   table js
+
+
+
+
+  $(window).on('load', function() {
+ 
+ myFunction1()
+ myFunction2()
+});
+
+
+
+</script>
+<!--Ajvar kraj-->
+<!--Ajvar pocetak II                Ajvar   II******************************************************************-->
+<div class="row" name="aj"style="height: 60vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn55" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200_" class="btn btn-sm btn-primary">/b200_</buton>
+    
+        <button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+        <h4 style="font-weight: bold;" id="1200">PLC 12</h4>
+        <!--p id="1500">1500 10</p-->
+       
+
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <input
+        type="datetime-local"
+        id="meeting-time_"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" />
+       <!--NEW   INPUT-->
+       <input
+       type="datetime-local"
+       id="meeting-time1_"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" />
+         </div>
+    <!--option   start--><div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place_" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1_" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+   document.getElementById("text1_").readOnly = true;
+ //  document.getElementById("text1").innerHTML = "neki textyxcyxcycxycyxcyxcyxcyxcycxyxcyccycycyxcyxc";
+ document.getElementById("text1_").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1200', function(msg){
+ // document.getElementById("table").;
+  //document.getElementById("1200").style.color = 'green';   //#03fc7f
+  document.getElementById("1200").style.color = '#b1fc03'; 
+
+});
+socket.on('conn_1200b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = 'red';
+
+});
+socket.on('plc3', function(msg){
+ // var table = document.getElementById("table");
+
+
+
+
+});
+socket.on('plc', function(msg){
+
+
+
+
+});
+
+</script>
+
+
+<button id="addBtn15_" class="btn btn-sm btn-primary">Data_2</button>
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab2">
+    <caption>
+      Parts by Hours Line 2
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 2</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+
+
+
+
+</script>
+<!--Ajvar kraj 22-->
+<!--div class="container" style="margin-top:5px;margin-left: 15px"-->
+<div class="container" style="margin-top:5px">
+  <div class="row" >      
+    <div class="col-sm-4" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;">
+
+      <!--button id="addBtn1" class='child inline-block-child'>Create</button-->
+   
+   
+    <div>     </div><div>    <p   style=" font-size:12px; color:black;" id="a2">O</p>  </div>
+
+
+    <script>
+   
+  </script>
+   <!--TIME INPUT-->
+
+
+
+    </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-4">
+   
+  
+
+      
+     
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+
+      <!--h2>TITLE HEADING</h2-->
+   
+
+      <!--p>Some text..</p-->
+       <p>.</p>
+      
+
+  
+    </div>
+  </div>
+  <div class="row">
+   
+</div>
+</div>
+
+</div>
+ <!--     DIV1 SPA END  -->
+
+<script>
+ 
+ socket.on('cons',function(msg){
+console.log("SERVER_MSG: ",msg)
+ })
+///prvi plc 1500
+ socket.on('plc1', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1 , msg.1",msg[1]);
+
+document.getElementById("tab1").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2",msg);
+
+document.getElementById("tab1").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3",msg);
+
+document.getElementById("tab1").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4",msg);
+
+document.getElementById("tab1").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5",msg);
+
+document.getElementById("tab1").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6",msg);
+
+document.getElementById("tab1").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7",msg);
+
+document.getElementById("tab1").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8', function(msg){
+
+console.log("socket");
+console.log("plc8",msg);
+
+document.getElementById("tab1").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table = document.getElementById("tab1");
+socket.on('colo', function(msg){
+//console.log("colo : ",msg);
+
+       if(msg[1]==1){table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+//document.getElementById("tab1").rows[1].cells[i].backgroundColor='#65d457'
+////drugi plc
+
+socket.on('plc1_', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1_",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1_ , msg.1",msg[1]);
+
+document.getElementById("tab2").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2_",msg);
+
+document.getElementById("tab2").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3_",msg);
+
+document.getElementById("tab2").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4_",msg);
+
+document.getElementById("tab2").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5_",msg);
+
+document.getElementById("tab2").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6_",msg);
+
+document.getElementById("tab2").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7_",msg);
+
+document.getElementById("tab2").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8_', function(msg){
+
+//console.log("socket");
+console.log("plc8_",msg);
+
+document.getElementById("tab2").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table_ = document.getElementById("tab2");
+socket.on('colo_', function(msg){
+//console.log("colo_ : ",msg);
+
+       if(msg[1]==1){table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+
+</script>            <!--script onload="chart100()"-->
+ <!--     DIV2 SPA   -->
+<div class="overlay2"  id ="div2">
+  <style>
+  .overlay2{
+      opacity:0.9;
+   /*   background-color:#ccc;   */
+ /*     position:fixed;
+      width:100%;
+      height:100%;
+      top:40px;
+      left:0px;
+      z-index:1000;  */
+  }
+  </style>
+<script src="./Chart.js"></script>
+
+<script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+
+<!--Vendor Libraries - Load in the right order   -->
+<script src="../uibuilder/vendor/vue/dist/vue.js"></script> <!-- dev version with component compiler -->
+<!-- <script src="../uibuilder/vendor/vue/dist/vue.min.js"></script>   prod version with component compiler -->
+<!-- <script src="../uibuilder/vendor/vue/dist/vue.runtime.min.js"></script>   prod version without component compiler -->
+<!-- <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script> for older browsers -->
+<script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.js"></script>
+
+<!-- REQUIRED: Sets up Socket listeners and the msg object -->
+<!-- <script src="./uibuilderfe.js"></script>   //dev version -->
+<script src="./uibuilderfe.min.js"></script> <!--    //prod version -->
+<!-- OPTIONAL: You probably want this. Put your custom code here -->
+<script src="./index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+    <div id="row1">
+        <!--div id="col1">de</div-->
+        <div id="col2">
+            <div id="ro1">
+                <div id="co1"
+                    style="width:5%;font-size: 50%;font-family: Arial;font-weight:bold;color : 626C81;  display: flex;flex-direction: column;   ">
+                    <div id="co1_1_space"
+                        style="  font-family: Arial;font-weight:bold;color : 626C81;  height: 5%;">
+                    </div>
+                    <div id="co1_1"
+                        style="  font-size: 30%;font-family: Arial;font-weight:bold;color : 626C81;   align-items: center;   text-align: center;    justify-content:center; height: 12%;">
+                        Auto</div>
+                    <div id="co1_2_space" style=" font-family: Arial;font-weight:bold;color : white;  height: 1%;">
+                    </div>
+                    <div id="co1_3"
+                        style="  font-size: 30%;font-family: Arial;font-weight:bold;color : 626C81;height: 17%; text-align: center;">
+                        Motor</div>
+                    <div id="co2_3"
+                        style="  font-size: 100%;font-family: Arial;font-weight:bold;color : #626C81;   align-items: center; height:5%;  text-align: center;    justify-content:center; height: 2%;">
+                    </div>
+                    <div id="co2_11"
+                        style="  font-size: 100%;font-family: Arial;font-weight:bold;color : #626C81;   align-items: center;   text-align: center;    justify-content:center; height: 2%;">
+                        </div>
+                    <div id="co2_44"
+                        style="font-size: 50%;font-family: Arial;font-weight:bold;color : #626C81;height: 27%; text-align: center;">
+                        Done:111</div>
+                    <div id="co2_15"
+                        style=" width:100%; font-size: 100%;font-family: Arial;font-weight:bold;color : #626C81;   align-items: center;    height: 20%;display: flex;flex-direction: row; ">
+                        <div id="co2_111"
+                            style="  font-size: 80%;font-family: Arial;font-weight:bold;color : #626C81;   align-items: top;   text-align: top;    justify-content:center; height: 15%;">
+                            </div>
+
+                        <div id="co2_44"
+                            style="font-size: 100%;font-family: Arial;font-weight:bold;color : #626C81;height: 40%; text-align: center;display: flex;flex-direction: column;width:100%;">
+                            <div id="co2_44"
+                                style="font-size: 100%;font-family: Arial;font-weight:bold;color : #626C81;height: 5%;width:100%;">
+                            </div>
+                            <!--progress id="fil1" value="50" max="100"
+                                style=" width:70%;height:90%;borderRadius: 5;background-color: #ddd;borderRadius: 5;"></progress-->
+                        </div>
+                    </div>
+
+
+
+                    <!--script>
+                        document.getElementById("fil1").value = 30;
+                    </scrip-->
+
+
+                </div>
+
+                <div id="co2"
+                    style="width:15% ;font-size: 150%;font-family: Arial;font-weight:bold;color : #626C81;  display: flex;flex-direction: column;   ">
+                    <!--div id="co2_1_space"
+          style=" background-color: orange;  font-family: Arial;font-weight:bold;color : white;  height: 20%;">
+        </div-->
+
+                    <!--div id="co2_2_space" style=" font-family: Arial;font-weight:bold;color : white;  height: 10%;">
+        </div-->
+                    <!--div id="co2_3"
+                        style="     font-size: 100%;font-family: Arial;font-weight:bold;color : white;height: 50%; text-align: center;">
+                        123456789</div-->
+                </div>
+
+                <!--div id="co3"
+        style="width:100% font-size: 350%;font-family: Arial;font-weight:bold;color : white;  display: flex;flex-direction: column;   "-->
+                <!--div id="co3_1_space"
+          style=" background-color: orange;  font-family: Arial;font-weight:bold;color : white;  height: 20%;">
+        </div-->
+
+                <!--div id="co3_2_space" style=" font-family: Arial;font-weight:bold;color : white;  height: 10%;">
+        </div-->
+
+                <!--/div-->
+
+
+                <div id="co5"
+                    style="     font-size: 100%;font-family: Arial;font-weight:bold;color : white;height: 100%;width: 15%; text-align: center;">
+
+                    <!--STAART-->
+                    <div id="c1" style=" display: flex;flex-direction: column;height: 100%;width: 100%;">
+                        <div id="co3_2_space"
+                            style=" font-family: Arial;font-weight:bold;color : #626C81;  height: 20%;"></div>
+
+                        <div id="co3_2_space"
+                            style=" font-family: Arial;font-weight:bold;color : #626C81;  height: 15%;"> Shift OEE
+                        </div>
+                        <div id="co3_2_space"
+                            style=" font-family: Arial;font-weight:bold;color : #626C81;  height: 5%;">
+                        </div>
+                        <div id="coo_flex"
+                            style=" font-family: Arial;font-weight:bold;color : #626C81;  height: 80%;display: flex;flex-direction: row;">
+                            <!--div id="c1_levi" style="width:50%;""-->
+
+
+            <!-- NEW DONUT START -->
+                            <style>
+
+                            </style>
+
+                            <!-- NEW DONUT END-->
+
+
+
+
+                            </div-->
+                            <div id=" c1_desni" style="width:100%;align-items: center;justify-content:center;  ">
+                                <!-- NEW DONUT START -->
+                                <canvas id="myChart1000" style="width:100%; height:68%"></canvas>
+                                <script>
+                                    //  ok
+                          function chart1(){
+                                      //cc
+                                    //  var a1;
+                                     // a1=donut;
+                                     var donut;
+                                    donut=a111;
+                                  //  a111=33; /// dodato za test donut  izbrisi                                         donut=a111;
+                                    var data = {
+                                //  labels: ["Blue","Red"],
+                              //  lll
+                                  datasets: [
+                                    {
+                                    //  data: [a1, 100-a1],// bilo je
+                                    data: [donut, 100-donut],
+                
+                                  //    backgroundColor: ["#1eb343","#36A2EB"],
+                                 backgroundColor: ["green","#0A202F"],  //#626C81  
+                               //   backgroundColor: ["#1eb343","#626C81"],
+                
+                                    }]
+                                };
+                                
+                                Chart.pluginService.register({
+                                  beforeDraw: function(chart) {
+                                    var width = chart.chart.width,
+                                        height = chart.chart.height,
+                                        ctx = chart.chart.ctx,
+                                        type = chart.config.type;
+                                
+                                    if (type == 'doughnut')
+                                    {
+                                      var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                                                    (chart.config.data.datasets[0].data[0] +
+                                                    chart.config.data.datasets[0].data[1]));
+                                      var oldFill = ctx.fillStyle;
+                                      var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+                                //      var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+                                      
+                                      ctx.restore();
+                                   //  ctx.font = fontSize + "em sans-serif";    //staro
+                                      ctx.font = fontSize + "em sans-serif";
+                                      ctx.fillStyle = "red";
+                                  //  ctx.Colour="red";
+                              //  ctx.font.fillStyle = "red";
+                                 
+                                 //  ctx.font =  "arial bold" + fontSize ;
+                              //  ctx.font = fontSize + "em arial";
+                         //   ctx.font = "bold 100px arial";  //  novo ok
+                            //    ctx.font = "bold"+ fontSize +"arial";
+                                      ctx.textBaseline = "middle";
+                                
+                                      var text = percent + "%",
+                                          textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                          textY = (height + chart.chartArea.top) / 2;
+                                      
+                                 //     ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+                                //    ctx.fillStyle ="white";  // staro
+                                ctx.fillStyle ="#626C81";
+                                      ctx.fillText(text, textX, textY);
+                                      ctx.fillStyle = oldFill;
+                                     //   text.fillStyle = "red";
+                                      ctx.save();
+                                    }
+                                  }
+                                });
+                                
+                                var myChart1 = new Chart(document.getElementById('myChart1000'), {
+                                  type: 'doughnut',
+                                  data: data,
+                                  options: {
+                                    cutoutPercentage:90,
+                                 //   percentageInnerCutout : 90,
+                              //    cutoutInnerPercentage:80,
+                                    animation: {
+                                    duration: 0
+                                    },
+                                      elements: {
+                                      arc: {
+                                      borderWidth: 0
+                                      }
+                                      },
+                                    responsive: true,
+                                    legend: {
+                                      display: false
+                                    }
+                                  }
+                                });
+                                    };
+                                </script>
+                                <!-- NEW DONUT END-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--STAART END-->
+
+                </div>
+                <div id="co6" style="width:29%;  font-family: Arial;font-weight:bold;color : white;  max-height: 35%;">
+                    <canvas id="myChart6" style="width:100%;max-width:570px;height:155px;"></canvas>
+                    <script onload="chart3()">
+                        chart3();
+           function chart3(){ 
+          //proba 5 start  levi chart
+          if(a1
+          <1){a1=""};if(a2<1){a2=""};if(a3<1){a3=""};if(a4<1){a4=""};if(a5<1){a5=""};if(a6<1){a6=""};if(a7<1){a7=""};if(a8<1){a8=""};if(a9<1){a9=""};if(a10<1){a10=""};if(a11<1){a11=""};if(a12<1){a12=""};if(a13<1){a13=""};if(a14<1){a14=""};if(a15<1){a15=""};if(a16<1){a16=""};if(a17<1){a17=""};if(a18<1){a18=""};if(a19<1){a19=""};if(a20<1){a20=""};
+            if(c1<1){c1="" };if(c2<1){c2="" };if(c3<1){c3="" };if(c4<1){c4="" };if(c5<1){c5="" };if(c6<1){c6="" };if(c7<1){c7=""
+            };if(c8<1){c8="" }; if(e1<1){e1="" };if(e2<1){e2="" };if(e3<1){e3="" };if(e4<1){e4="" };if(e5<1){e5=""
+            };if(e6<1){e6="" };if(e7<1){e7="" };if(e8<1){e8="" };
+          //proba5 end
+          
+          
+          //var xValues = ["op10","op20",300,400,500,600,700,800,900,1000];
+           //bilo je ok// var xValues = ["op10","op20",300,400,500,600,700,800];
+                      //    var xValues = [bb1_10,bb2,bb3,bb4,bb5,bb6,bb7,bb8];
+                           var xValues = [d1,d2,d3,d4,5,5,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30];
+          new Chart("myChart6", {
+           
+          type: "bar",
+           
+          
+          data: {
+          labels: xValues,
+          datasets: [
+            
+            {
+          label: 'Good parts in minu >>',
+          data: [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30],
+          borderColor: "green",
+          fill: true,backgroundColor: "blue",
+          
+          }
+          /*, 
+          {
+          label: 'Bad Parts',
+          //data: [160,170,170,190,200,270,40,50],
+            data: [c1,c2,c3,c4,c5,c6,c7,c8],
+          borderColor: "red",
+          fill: true,backgroundColor: "red",
+          fill: false
+          }
+          */
+          /*,
+           {
+          label: 'OEE [%]',
+          //data: [30,70,200,50,60,40,200,100,200,100],
+            data: [e1,e2,e3,e4,e5,e6,e7,e8],  
+          borderColor: "blue",
+          fill: true,backgroundColor: "blue",
+          fill: false
+          }
+          */
+          /*
+          ,
+          
+          {
+          label: 'man mode [%]',
+          data: [20,50,20,60,60,40,100,200,20,100],
+          borderColor: "yellow",
+          fill: true,backgroundColor: "yellow",
+          fill: false
+          }
+          */
+          ,
+          ]
+          },
+          
+          options: {
+
+            events:[],// ubija sve ali lepo redi
+          //proba1
+          axisX:{
+          "title": "Axis Title in Tahoma Font",
+          // titleFontFamily: "tahoma"
+          },
+          //proba1 end
+          
+            //test
+            "hover": {
+            "animationDuration": 0
+            },
+            "animation": {
+            "duration": 1,
+            "onComplete": function() {
+            var chartInstance = this.chart,
+            ctx = chartInstance.ctx;
+            
+            ctx.font = Chart.helpers.fontString(12,Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle,
+            Chart.defaults.global.defaultFontFamily);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+        ctx.textsize = 20;
+            //test11
+            this.data.datasets.forEach(function(dataset, i) {
+            var meta = chartInstance.controller.getDatasetMeta(i);
+            meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+            });
+            });
+            }
+            },
+            //testend
+          // legend: {display: false}
+          
+          legend: {display: true},
+          
+          scales: {
+          yAxes: [{ticks: {min: 1, max:120}}],
+          }
+          }
+          });
+                    }
+                   //*************************kraj grafa 1  
+                    </script>
+                </div>
+                <div id="co7" style=" display: flex;flex-direction: column;height: 100%;width: 28%;">
+                    <div id="co2_2_space" style="width:100%;  font-family: Arial;font-weight:bold;  max-height: 10%;">
+                       
+                    </div>
+                    <canvas id="myChart8" style="width:100%;max-width:570px;;height:160px; "></canvas>
+                    <script onload="chart7()">
+                        chart4();
+function chart4(){ 
+//proba 5 start   chart desni sa oee
+if(a1
+<1){a1=""};if(a2<1){a2=""};if(a3<1){a3=""};if(a4<1){a4=""};if(a5<1){a5=""};if(a6<1){a6=""};if(a7<1){a7=""};if(a8<1){a8=""};
+if(c1<1){c1="" };if(c2<1){c2="" };if(c3<1){c3="" };if(c4<1){c4="" };if(c5<1){c5="" };if(c6<1){c6="" };if(c7<1){c7=""
+};if(c8<1){c8="" }; if(e1<1){e1="" };if(e2<1){e2="" };if(e3<1){e3="" };if(e4<1){e4="" };if(e5<1){e5=""
+};if(e6<1){e6="" };if(e7<1){e7="" };if(e8<1){e8="" };
+//proba5 end
+
+
+//var xValues = ["op10","op20",300,400,500,600,700,800,900,1000];
+//bilo je ok// var xValues = ["op10","op20",300,400,500,600,700,800];
+             // var xValues = ["Settings  ","Waiting Material ","Regular Mintenance","Tehnologic Reason","automatic steering errors","Unknown reasons"];
+             //   var xValues = [g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15];
+      //      var xValues = [10,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15];
+              var xValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
+           //var xValues = [g1,g2,g3,g4,g5,g6,g7,g8,g9,g10, g11,g12,g13,g14,g15,g16,g17,g18,g19,g20, g21,g22,g23,g24,g25,2g6,g27,g28,g29,g30 ];
+new Chart("myChart8", {
+
+type: "bar",
+
+
+data: {
+labels: xValues,
+datasets: [
+
+{
+label: 'Good Parts',
+data: [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15],
+borderColor: "green",
+fill: true,backgroundColor: "blue",
+
+},
+
+{
+label: 'Bad Parts',
+//data: [160,170,170,190,200,270,40,50],
+//  data: [c1,c2,c3,c4,c5,c6,c7,c8],
+data: [m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15],
+borderColor: "red",
+fill: true,backgroundColor: "red",
+fill: false
+}
+
+,
+
+
+{
+label: 'Motor[sec in min]',
+//data: [30,70,200,50,60,40,200,100,200,100],
+data: [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15],  
+borderColor: "#6872FB",
+// fill: true,backgroundColor: "#DD534D",// #ff6600
+fill: true,backgroundColor: "#006633",// #ff6600  ;  darkgreen  ;
+fill: false
+}
+
+/*
+,
+
+{
+label: 'man mode [%]',
+data: [20,50,20,60,60,40,100,200,20,100],
+borderColor: "yellow",
+fill: true,backgroundColor: "yellow",
+fill: false
+}
+*/
+// ,
+]
+},
+
+options: {
+  events:[],
+//proba1
+axisX:{
+"title": "Axis Title in Tahoma Font",
+// titleFontFamily: "tahoma"
+},
+//proba1 end
+
+//test
+"hover": {
+"animationDuration": 0
+},
+"animation": {
+"duration": 1,
+"onComplete": function() {
+var chartInstance = this.chart,
+ctx = chartInstance.ctx;
+
+ctx.font = Chart.helpers.fontString(10,Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle,
+Chart.defaults.global.defaultFontFamily);
+ctx.textAlign = 'center';
+ctx.textBaseline = 'bottom';
+
+this.data.datasets.forEach(function(dataset, i) {
+var meta = chartInstance.controller.getDatasetMeta(i);
+meta.data.forEach(function(bar, index) {
+var data = dataset.data[index];
+ctx.fillText(data, bar._model.x, bar._model.y - 5);
+});
+});
+}
+},
+//testend
+// legend: {display: false}
+
+legend: {display: true},
+
+scales: {
+yAxes: [{ticks: {min: 1, max:120}}],
+// yAxes: [{ticks: {{fontColor: "#5ac4da"},{min: 1, max:130}}}],
+}
+}
+});
+        }
+       //*************************kraj grafa 1  
+                    </script>
+
+                </div>
+                <div id="co4"
+                    style=" font-family: Arial;font-weight:bold;color : 626C81;   display: flex;flex-direction: column; width:10% ;font-size: 60%; ">
+                    <div id="co2_2_space_1"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : white;  height: 10%;">
+                        DK2-Automat_1
+
+                        <button class="save" mat-raised-button style=" background-COLOR:#141B2D; bORDER-COLOR: BLACK;color:#626C81; "  onclick="toggleFullScreen()">Fulscr</button><!--RADI BUTTON U FLEXU--> 
+                    </div>
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : white;  height: 10%;">
+                        709-20074-19
+                    </div>
+
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : white;  height: 10%;">
+                        <a href="/files/1.csv">History</a>
+                    </div>
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 6%;">
+                        Act.Time:</div>
+                        <!--button onclick="fnSendToNR('act_1')"style=" font-weight:bold;position: absolute;   left: 1430px;  top: 50px;color:#626C81;background-color:#141B2D">Get data</button>
+                        <button onclick="fnSendToNR('act_2')"style=" font-weight:bold;position: absolute;   left: 1430px;  top: 75px;color:#626C81;background-color:#141B2D">-1 hour </button>
+                        <button onclick="fnSendToNR('act_3')"style=" font-weight:bold;position: absolute;   left: 1430px;  top: 100px;color:#626C81;background-color:#141B2D">0 hour </button-->                        <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 10%; display: flex;flex-direction: row;">
+                      <!--  1111.&nbsp;&nbsp;&nbsp;-->
+                        <div id="mat_1"
+                            style="width:100%;  font-family: Arial;font-weight:bold;color : #808080;  height: 10%;"> <!--Acttime;-->
+                            _</div>
+                    </div>
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 5%; display: flex;flex-direction: row;">
+                        History by hour:&nbsp;&nbsp;&nbsp;
+                        <div id="mat_22"
+                            style="width:50%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 10%;">
+                            <style>
+                            .save {
+                            float: right;
+                            background-color: red;}
+                            </style>
+          
+                        <!-- 2_1--></div>
+                    </div>
+                    <div id="co2_2_spacerrrr"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color :#808080;  height: 10%; display: flex;flex-direction: row;">
+                    &nbsp;&nbsp;&nbsp;
+                        <div id="mat_3"
+                            style="width:10%;  font-family: Arial;font-weight:bold;color : white;  height: 3%;">
+                            </div>
+                    </div>
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 1%; display: flex;flex-direction: row;">
+                        Hour offset:&nbsp;&nbsp;&nbsp; 
+                        <div id="mat_4"
+                            style="width:10%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 3%;">
+                            ?
+                        </div>
+                    </div>
+                    <div id="co2_2_space"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 10%; display: flex;flex-direction: row;">
+                      <!--5.-->  &nbsp;&nbsp;&nbsp;
+                        <div id="mat_5"
+                            style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 10%;">
+                            <!--button onclick="fnSendToNR('act_1')"style=" font-weight:bold;position: absolute;   left: 5px;  top: 60px;">Action_1</button-->
+                           <!-- 5_1--></div>
+                    </div>
+                    <div id="co2_2_space1"
+                        style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 10%; display: flex;flex-direction: row;">
+                      <!--6.-->  &nbsp;&nbsp;&nbsp;
+                        <div id="mat_6"
+                            style="width:100%;  font-family: Arial;font-weight:bold;color : #626C81;  height: 30%;">
+                        <!--6_1-->
+                            <!--button onclick="fnSendToNR('act_1')"style=" font-weight:bold;position: absolute;   left: 5px;  top: 60px">Action_1</button-->
+                            <!--button onclick="fnSendToNR('act_1')"style=" font-weight:bold;position: absolute;   left: 5px;  top: 60px;">Action_1</button-->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="ro2">
+                <div id="c1" style=" display: flex;flex-direction: row;">
+
+
+
+                    <div id="c1_1" style="width:50%;transform: translate(15%, 20%);">
+
+
+                    </div>
+                    <div id="c1_2"
+                        style="width:50%;align-items: center;justify-content:center; transform: translate(10%, 20%);">
+
+
+
+                    </div>
+                </div>
+                <div id="222"style="width:100%;max-height:340px;"">
+                    <canvas id="myChart9" style="width:100%;max-width:1500px; "></canvas>
+                    <script onload="chart5()">
+                        chart5();
+           function chart5(){ 
+          //proba 5 start  levi chart
+          if(a1
+          <1){a1=""};if(a2<1){a2=""};if(a3<1){a3=""};if(a4<1){a4=""};if(a5<1){a5=""};if(a6<1){a6=""};if(a7<1){a7=""};if(a8<1){a8=""};if(a9<1){a9=""};if(a10<1){a10=""};if(a11<1){a11=""};if(a12<1){a12=""};if(a13<1){a13=""};if(a14<1){a14=""};if(a15<1){a15=""};if(a16<1){a16=""};if(a17<1){a17=""};if(a18<1){a18=""};if(a19<1){a19=""};if(a20<1){a20=""};
+            if(c1<1){c1="" };if(c2<1){c2="" };if(c3<1){c3="" };if(c4<1){c4="" };if(c5<1){c5="" };if(c6<1){c6="" };if(c7<1){c7=""
+            };if(c8<1){c8="" }; if(e1<1){e1="" };if(e2<1){e2="" };if(e3<1){e3="" };if(e4<1){e4="" };if(e5<1){e5=""
+            };if(e6<1){e6="" };if(e7<1){e7="" };if(e8<1){e8="" };
+          //proba5 end
+          
+          
+          //var xValues = ["op10","op20",300,400,500,600,700,800,900,1000];
+           //bilo je ok// var xValues = ["op10","op20",300,400,500,600,700,800];
+                      //    var xValues = [bb1_10,bb2,bb3,bb4,bb5,bb6,bb7,bb8];
+                         //  var xValues = ["1.greska 2s12","1.proba","1.kleben st16-8 2s12","2.round st16-8 2s12","2.  2y12a pos","2.round st16-8 2s12",  "3. st18-8 3s14","3. 2s12a","3.servo st50-8 m45","4.strom st15mdd","4.keine freigabe","4.round 24s12yb 2s12","5.endlage st12 fehlt","5.fehler","5.pneumatic aus ",d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30,d31,d32,d33,d34,d35,d36,d38,d39];
+ //errrors
+   //     var xValues = ["1-1 greska 2s12 --1.","1-2 proba --1.","1-3 kleben st16-8 2s12 --1.","round st16-8 2s12 --2.","  2y12a pos --2.","round st16-8 2s12 --2",  " st18-8 3s14 --3","2s12a --3","3.servo st50-8 m45","4.strom st15mdd","4.keine freigabe","4.round 24s12yb 2s12","5.endlage st12 fehlt","5.fehler","5.pneumatic aus ",d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30,d31,d32,d33,d34,d35,d36,d38,d39];
+          var xValues = 
+          [er_1_1+" --1.",er_2_1+" --1.",er_3_1+" --1.","",
+          er_1_2+" --2.",er_2_2+" --2.",er_2_3+" --2.","",
+          er_1_3+" --3.",er_2_3+" --3.",er_3_3+"--3.","",
+          er_1_4+" --4.",er_2_4+" --4.",er_3_4+" --4.","",
+          er_1_5+" --5.",er_2_5+" --5.",er_3_5+" --5.","",
+          er_1_6+" --6.",er_2_6+" --6.",er_3_6+" --6.","",
+          er_1_7+" --7.",er_2_7+" --7.",er_3_7+" --7.","",
+          er_1_8+" --8.",er_2_8+" --8.",er_3_8+" --8.","",
+          er_1_9+" --9.",er_2_9+" --9.",er_3_9+" --9.","",
+          er_1_10+" --10.",er_2_10+" --10.",er_3_10+" --10.","",
+
+          er_1_10+" --11.",er_2_10+" --11.",er_3_10+" --11.","",
+
+          er_1_10+" --12.",er_2_10+" --12.",er_3_10+" --12.","",",............................................,"
+];
+        
+          new Chart("myChart9", {
+           
+          type: "bar",
+           
+          
+          data: {
+          labels: xValues,
+          datasets: [
+            
+            {
+          label: 'Error log by minutes >>',
+          data: [er_1_c_1,er_2_c_1,er_3_c_1,,
+          er_1_c_2,er_2_c_2,er_3_c_2,,
+        er_1_c_3,er_2_c_3,er_3_c_3,,
+
+        er_1_c_4,er_2_c_4,er_3_c_4,,
+        er_1_c_5,er_2_c_5,er_3_c_5,,
+        er_1_c_6,er_2_c_6,er_3_c_6,,
+        er_1_c_7,er_2_c_7,er_3_c_7,,
+        er_1_c_8,er_2_c_8,er_3_c_8,,
+        er_1_c_9, er_2_c_9, er_3_c_9,,
+        er_1_c_10,er_2_c_10,er_3_c_10,,
+
+        er_1_c_11,er_2_c_11,er_3_c_11,,
+        er_1_c_12,er_2_c_12,er_3_c_12,
+        ],
+          borderColor: "green",
+          fill: true,backgroundColor: "grey",
+          
+          }
+      /*    , 
+          {
+          label: 'Bad Parts',
+          //data: [160,170,170,190,200,270,40,50],
+            data: [c1,c2,c3,c4,c5,c6,c7,c8],
+          borderColor: "blue",
+          fill: true,backgroundColor: "blue",
+          fill: false
+          }
+          */
+          /*,
+           {
+          label: 'OEE [%]',
+          //data: [30,70,200,50,60,40,200,100,200,100],
+            data: [e1,e2,e3,e4,e5,e6,e7,e8],  
+          borderColor: "blue",
+          fill: true,backgroundColor: "blue",
+          fill: false
+          }
+          */
+          /*
+          ,
+          
+          {
+          label: 'man mode [%]',
+          data: [20,50,20,60,60,40,100,200,20,100],
+          borderColor: "yellow",
+          fill: true,backgroundColor: "yellow",
+          fill: false
+          }
+          */
+          ,
+          ]
+          },
+          
+          options: {
+responsive:true,
+maintainAspectRatio:false,
+
+              events : [],
+        indexAxis: 'y',
+          //proba1
+          axisX:{
+          "title": "Axis Title in Tahoma Font",
+          // titleFontFamily: "tahoma"
+          },
+          //proba1 end
+          
+            //test
+        //    "hover": {
+         //   "animationDuration": 0
+          //  },
+            "animation": {
+            "duration": 0,
+            "onComplete": function() {
+            var chartInstance1 = this.chart,
+            ctx = chartInstance1.ctx;
+            
+            ctx.font = Chart.helpers.fontString(10,Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle,
+            Chart.defaults.global.defaultFontFamily);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.textsize = 20;
+            //test11
+            this.data.datasets.forEach(function(dataset, i) {
+            var meta = chartInstance1.controller.getDatasetMeta(i);
+            meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+            });
+            });
+            }
+            },
+            //testend
+          // legend: {display: false}
+          
+          legend: {display: true},
+          
+          scales: {
+        //  yAxes: [{ticks: {min: 1, max:60}}
+         
+                    yAxes: [{ticks: {min: 1, max:60}}
+                    
+                  
+                    //scale.height = 80,
+
+             //     scale.height = 120
+          
+          /*
+           ,  {
+          afterFit: (scale) => {
+         // scale.height = 120;
+           scale.height = 30;
+
+          }
+          }
+          */
+          
+          
+          
+          ],
+          }
+          }
+          });
+                    }
+                   //*************************kraj grafa 1  
+                    </script>
+
+                </div>
+            </div>
+            <div id="ro3">
+                <div id="c11">
+                <!--canvas id="myChart20" style="width:1300px;max-height:170px; "></canvas-->
+                <!--canvas id="myChart20" style="width:100%;max-width:400px;max-height:170px; "></canvas-->
+                <!--script onload="chart100()"-->
+                
+             <!--     //  chart100();  -->
+                  
+                   
+                       <!--     //   function chart100(){ -->
+<!--//new chart js here                                  //-->
+<!--div style="max-width:100%;max-height:85%;"-->
+  <div style="max-width:100%;"></div>
+    <!--div class="myChart-container" style="position: relative; max-height:10vh; width:80vw"-->
+    <canvas id="myChart" style="max-height:11vh;"></canvas>
+</div>
+
+<script>
+                chart11();
+                function chart11(){
+    let data = {
+          //  labels: [ "January", "February","March","April","May","June","July"],
+   //     labels: [0, 1,2,3,4,5,"July"],
+labels: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],
+                      
+                 
+            datasets: [{
+                label: "Good",
+             //  label: false,
+             //   data: [12, 19, 3, 5, 2, 3, 8,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,54,55,56,57,58,59],
+             data: [good_0, good_1, good_2, good_3, good_4, good_5,good_6,good_7,good_8,good_9,good_10,good_11,good_12,good_13,good_14,good_15,good_16,good_17,good_18,good_19,good_20,good_21,good_22,good_23,good_24,good_25,good_26,good_27,good_28,good_29,good_30,
+                       good_31,good_32,good_33,good_34,good_35,good_36,good_37,good_38,good_39,good_40,
+                       good_41,good_42,good_43,good_44,good_45,good_46,good_47,good_48,good_49,good_50,good_51,good_52,good_54,good_55,good_56,good_57,good_58,good_59],
+             //   borderColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'blue',//#223D7E
+      //  borderColor: '#223D7E',
+               // borderWidth: 1,
+                pointRadius: 1,
+                borderWidth: 2,
+                fill: false
+            },
+            {
+                label: "Bad",
+           //   label: false,
+                          data: [bad_0, bad_1, bad_2, bad_3, bad_4, bad_5, bad_6,bad_7,bad_8,bad_9,bad_10,
+                           bad_11,bad_12,bad_13,bad_14,bad_15,bad_16,bad_17,bad_18,bad_19,bad_20,
+                           bad_21,bad_22,bad_23,bad_24,bad_25,bad_26,bad_27,bad_28,bad_29,bad_30,
+                           bad_31,bad_32,bad_33,bad_34,bad_35,bad_36,bad_37,bad_38,bad_39,bad_40,
+                            bad_41,bad_42,bad_43,bad_44,bad_45,bad_46,bad_47,bad_48,bad_49,bad_50,bad_52,bad_53,bad_54,bad_55,bad_56,bad_57,bad_58,bad_59],
+              //  borderColor: 'rgba(75, 192, 192, 1)',
+              borderColor: 'red',
+            pointRadius: 1,    
+                borderWidth: 2,
+                fill: false
+            },
+                            {
+                          //  label: "Bad",
+                            // label: false,
+                            data: [35
+                              //  bad_0, bad_1, bad_2, bad_3, bad_4, bad_5, bad_6,bad_7,bad_8,bad_9,bad_10,
+                         //   bad_11,bad_12,bad_13,bad_14,bad_15,bad_16,bad_17,bad_18,bad_19,bad_20,
+                         //   bad_21,bad_22,bad_23,bad_24,bad_25,bad_26,bad_27,bad_28,bad_29,bad_30,
+                         //   bad_31,bad_32,bad_33,bad_34,bad_35,bad_36,bad_37,bad_38,bad_39,bad_40,
+                         //   bad_41,bad_42,bad_43,bad_44,bad_45,bad_46,bad_47,bad_48,bad_49,bad_50,bad_52,bad_53,bad_54,bad_55,bad_56,bad_57,bad_58,bad_59
+                            ],
+                            // borderColor: 'rgba(75, 192, 192, 1)',
+                            borderColor: 'green',
+                            pointRadius: 1,
+                            borderWidth: 2,
+                            fill: false
+                            }
+                   
+        ]
+        };
+ 
+        let options1 = {
+legend: {
+display: false
+},
+tooltips: {
+callbacks: {
+label: function(tooltipItem) {
+return tooltipItem.yLabel;
+}
+}
+},
+
+
+
+            events:[],
+            responsive: true,
+            maintainAspectRatio: false,
+        //    scales: {
+            //     yAxes: [{ticks: {min: 1, max:120}}],
+             //                     },
+       responsive: true,
+            scales: {
+                x: {
+                    type: 'category',
+                    position: 'bottom'
+                },
+                y: {
+                    max: 50,
+            min: 0,
+                  //  type: 'linear',
+                    position: 'left',
+                  //  ticks: {min: 1, max:120}
+                  yAxes: [{ticks: {min: 1, max:120}}],
+                }
+            },
+            plugins: {
+             //   legend: {
+   //   display: false
+ //   },
+    /*
+                annotation: {
+
+                    annotations: [{
+                     //   type: 'line',
+                     //   mode: 'vertical',
+                      //  scaleID: 'x',
+                      //  value: 'March',
+                      value: 'June',
+
+                        borderColor: 'red',
+                        borderWidth: 2,
+                        label: {
+                            enabled: true,
+                            content: 'Vertical Line'
+                        }
+                    }]
+                }
+                */
+            },
+            animation: {
+              //  "duration": 0,
+                "duration": 0.1,
+                "onComplete": function() {
+                    console.log("ddddd");
+                    ctx3.font = "bold 8px verdana, sans-serif";
+                    ctx3.fillStyle = "blue";
+                    ctx3.fillText("GOOD", 38, 10);
+                    ctx3.font = "bold 8px verdana, sans-serif";
+                    ctx3.fillStyle = "red";
+                    ctx3.fillText("BAD", 72, 10);
+
+
+
+                    ctx3.font = "bold 8px verdana, sans-serif";
+                  //  context.fillStyle = "#00ff00";
+               //   ctx3.fillStyle = "blue";//#223D7E
+                ctx3.fillStyle = "#223D7E";
+                   // ctx3.textAlign = "start";
+                    ctx3.textAlign = "center";
+
+                  //  ctx3.fillText(100, 200, 40);  // radi
+              //  ctx3.fillText(100, 200, 40);
+                  ctx3.fillText("60 parts in selected hour with Get data button", 750, 7);
+                  //  ctx3.fillText(100, 100, 40); 
+                   // [1].x
+                 //  ctx3.fillText(100, myChart.getDatasetMeta(0).data[1].x, 40); 
+                   var g1= myChart.getDatasetMeta(1).data
+                var g2= myChart.getDatasetMeta
+             //   console.log("g2: "+g2);
+              //  console.log("meta: "+myChart.getDatasetMeta(0));
+                //const myJSON = JSON.stringify(obj);
+                const myJSON = JSON.stringify(myChart.getDatasetMeta);
+                 console.log("JSON: "+myJSON);
+                 //  console.log("g1: "+g1);
+              //     console.log("g1[0]: "+g1[0]);
+                   //[0]._view.x
+
+
+                 //  console.log("g1[0].x: "+g1[0].x);
+
+                   var g0= myChart.getDatasetMeta(0).data
+                   console.log("g0: "+g0[0]);
+            //    console.log("g0: "+g0.$context.raw);
+                ////   console.log("g0[0]: "+g0[0]);
+                ////   console.log("g0[0].x: "+g0[0].x);
+                ////   console.log("g0[0].y: "+g0[0].y);
+                ////   console.log("g0[1].x: "+g0[1].x+"g0[1].y: "+g0[1].y);
+               //    ctx3.fillText("777-1", 115-8, 44-6); 
+                 //  ctx3.fillText("777-1", g0[1].x-8, g0[1].y-6); 
+                //   ctx3.fillText("777-2", g0[2].x-8, g0[2].y-6); 
+                //   ctx3.fillText("777-3", g0[3].x-8, g0[3].y-6); 
+
+                ////   ctx3.fillText(g0[4].$context.raw, g0[4].x, g0[4].y-6); 
+                 ////  ctx3.fillText(g0[5].$context.raw, g0[5].x, g0[5].y-6); 
+                 ////  ctx3.fillText(g0[6].$context.raw, g0[6].x, g0[6].y-6); 
+                        ctx3.fillText(myChart.data.datasets[0].data[1],g0[1]._view.x, g0[1]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[2],g0[1]._view.x, g0[1]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[3],g0[2]._view.x, g0[2]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[3],g0[3]._view.x, g0[3]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[4],g0[4]._view.x, g0[4]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[5],g0[5]._view.x, g0[5]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g0[6]._view.x, g0[6]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[7],g0[7]._view.x, g0[7]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[8],g0[8]._view.x, g0[8]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[9],g0[9]._view.x, g0[9]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[10],g0[10]._view.x, g0[10]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[11],g0[11]._view.x, g0[11]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[12],g0[12]._view.x, g0[12]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[13],g0[13]._view.x, g0[13]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[14],g0[14]._view.x, g0[14]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[15],g0[15]._view.x, g0[15]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[16],g0[16]._view.x, g0[16]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[17],g0[17]._view.x, g0[17]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[18],g0[18]._view.x, g0[18]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[19],g0[19]._view.x, g0[19]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[20],g0[20]._view.x, g0[20]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[21],g0[21]._view.x, g0[21]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[22],g0[22]._view.x, g0[22]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[23],g0[23]._view.x, g0[23]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[24],g0[24]._view.x, g0[24]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[25],g0[25]._view.x, g0[25]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[26],g0[26]._view.x, g0[26]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[27],g0[27]._view.x, g0[28]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[28],g0[28]._view.x, g0[29]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[29],g0[29]._view.x, g0[30]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[30],g0[30]._view.x, g0[30]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[31],g0[31]._view.x, g0[31]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[32],g0[32]._view.x, g0[32]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[33],g0[33]._view.x, g0[33]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[34],g0[34]._view.x, g0[34]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[35],g0[35]._view.x, g0[35]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[36],g0[36]._view.x, g0[36]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[37],g0[37]._view.x, g0[37]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[38],g0[38]._view.x, g0[38]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[39],g0[39]._view.x, g0[39]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[40],g0[40]._view.x, g0[40]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[41],g0[41]._view.x, g0[41]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[42],g0[42]._view.x, g0[42]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[43],g0[43]._view.x, g0[43]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[44],g0[44]._view.x, g0[44]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[45],g0[45]._view.x, g0[45]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[46],g0[46]._view.x, g0[46]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[47],g0[47]._view.x, g0[47]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[48],g0[48]._view.x, g0[48]._view.y-5);
+                      
+                        ctx3.fillText(myChart.data.datasets[0].data[49],g0[49]._view.x, g0[49]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[50],g0[50]._view.x, g0[50]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[51],g0[51]._view.x, g0[51]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[52],g0[52]._view.x, g0[52]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[53],g0[53]._view.x, g0[53]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[54],g0[54]._view.x, g0[54]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[55],g0[55]._view.x, g0[55]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[56],g0[56]._view.x, g0[56]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[57],g0[57]._view.x, g0[57]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[58],g0[58]._view.x, g0[58]._view.y-5);
+
+
+
+
+
+
+                //   ctx3.fillText("777", 27-8, 131-6); 
+
+                ctx3.fillStyle = "red";
+                   console.log("g1[0].x: "+g1[0].x);
+                   console.log("g1[0].y: "+g1[0].y); 
+                console.log("g1[0].yyyy: "+g1[0]._view.x);//radi Edge!!! ne Chrome
+                console.log("g1[0].yyyy: "+g1[0]._view.x); 
+/*
+                console.log("val: "+myChart.data.datasets[0].data[0]+ "g1[0].xxx: "+g1[0]._view.x+"g1[0].yyy: "+g1[0]._view.y);
+                      ctx3.fillText(myChart.data.datasets[0].data[0],g1[0]._view.x, g1[0]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[1],g1[1]._view.x, g1[1]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[2],g1[2]._view.x, g1[2]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[3],g1[3]._view.x, g1[3]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[4],g1[4]._view.x, g1[4]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[5],g1[5]._view.x, g1[5]._view.y-5);
+                      ctx3.fillText(myChart.data.datasets[0].data[6],g1[6]._view.x, g1[6]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[7]._view.x, g1[7]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[8]._view.x, g1[8]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[9]._view.x, g1[9]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[10]._view.x, g1[10]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[11]._view.x, g1[11]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[12]._view.x, g1[12]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[13]._view.x, g1[13]._view.y-5);
+                        ctx3.fillText(myChart.data.datasets[0].data[6],g1[14]._view.x, g1[14]._view.y-5);
+*/
+
+
+
+                   // console.log("g1[0].$context.raw: "+g1[0].$context.raw);
+                   // console.log("g1[0].$context.raw: "+g1[0].$context);
+                   //proba
+         ///////       ctx3.fillText(g1[0].$context.raw, g1[0].x, g1[0].y-6);
+                //[0]._view.x
+
+                ///////   ctx3.fillText(g1[0].$context.raw, g1[0].x, g1[0].y-6); 
+        //////           ctx3.fillText(g1[1].$context.raw, g1[1].x, g1[1].y-6); 
+         ///////          ctx3.fillText(g1[2].$context.raw, g1[2].x, g1[2].y-6); 
+                  // console.log("datasets[0]: "+data.datasets.data[0]);
+              /*    //.$context.raw   */
+                 ////  console.log("datasets[0]: "+g0[0].$context.raw);
+                 ////  console.log("datasets[1]: "+g0[1].$context.raw);
+                //   console.log("datasets[2]: "+g0[2].$context.raw);
+                console.log("ddddd");
+                }}
+        };
+        let ctx3 = document.getElementById('myChart').getContext('2d');
+        
+      //  ctx3.fillText(abc, 20, 40);
+  //  window.myChart.destroy();
+        let myChart = new Chart(ctx3, {
+    //        window.myChart.destroy();
+    //    if(window.myChart != undefined)
+  //   {   window.myChart.destroy();}
+    //    window.myChart = new Chart(ctx3, {
+
+
+
+
+            type: 'line',
+            data: data,
+            options: options1,               
+        });
+     //   console.log("aaaaaa")
+     //   console.log(myChart.getDatasetMeta(0).data)////nesto ima
+//console.log(myChart.getDatasetMeta[0].data[0])//myChart.data.datasets
+   //    console.log(myChart.getDatasetMeta[0])//undefined razvij dalje
+// console.log(myChart.getDatasetMeta[0].data)
+console.log("myChart"+myChart);
+console.log("myChart.data"+myChart.data);  // prikazuje sve!!!
+console.log(myChart.data.datasets[0].data[0]);
+       console.log(myChart.getDatasetMeta(0).data)
+/*       // ctx3.fillText(datasets[i].data[j], p._model.x, p._model.y - 20);   */
+ /*    // ctx3.fillText(100, 20, 40);    */
+                }; 
+  
+//  console.log("g00: "+g0.$context.raw);
+</script>
+<!--/body-->
+
+                          
+<!--//new chart js here  -->
+
+
+                                         <!--             //*************************kraj grafa 1  -->
+                <!--/script-->
+
+                </div>
+                <div id="c22">
+
+                    <!--button onclick="fnSendToNR('abc')"style=" font-weight:bold;position: absolute;   left: 620px;  top: 100px">Prikazi Graf op50</button-->
+
+
+                    <!-- Charteeee   od 1640 ctx4 -->
+
+
+                    
+<div style="max-width:100%;"-->
+<!-- div class="myCharte-container" style="position: relative; max-height:10vh; width:80vw"-->
+
+</div>
+<canvas id="myCharte"style="max-height:11vh;"></canvas>
+<!--new charteeee start-->
+
+<script>
+chart111();
+                function chart111(){
+    let data = {
+          //  labels: [ "January", "February","March","April","May","June","July"],
+   //     labels: [0, 1,2,3,4,5,"July"],
+labels: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],
+                      
+                 
+            datasets: [{
+                label: "Good",
+             //  label: false,
+             //   data: [12, 19, 3, 5, 2, 3, 8,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,54,55,56,57,58,59],
+             data: [qu_0, qu_1, qu_2, qu_3, qu_4, qu_5,qu_6,qu_7,qu_8,qu_9,qu_10,qu_11,qu_12,qu_13,qu_14,qu_15,qu_16,qu_17,qu_18,qu_19,qu_20,qu_21,qu_22,qu_23,qu_24,qu_25,qu_26,qu_27,qu_28,qu_29,qu_30,
+                       qu_31,qu_32,qu_33,qu_34,qu_35,qu_36,qu_37,qu_38,qu_39,qu_40,
+                       qu_41,qu_42,qu_43,qu_44,qu_45,qu_46,qu_47,qu_48,qu_49,qu_50,qu_51,qu_52,qu_54,qu_55,qu_56,qu_57,qu_58,qu_59],
+             //   borderColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'green',//#223D7E
+      //  borderColor: '#223D7E',
+               // borderWidth: 1,
+                pointRadius: 1,
+                borderWidth: 2,
+                fill: false
+            },
+            /*
+            {
+                label: "Bad",
+           //   label: false,
+                          data: [bad_0, bad_1, bad_2, bad_3, bad_4, bad_5, bad_6,bad_7,bad_8,bad_9,bad_10,
+                           bad_11,bad_12,bad_13,bad_14,bad_15,bad_16,bad_17,bad_18,bad_19,bad_20,
+                           bad_21,bad_22,bad_23,bad_24,bad_25,bad_26,bad_27,bad_28,bad_29,bad_30,
+                           bad_31,bad_32,bad_33,bad_34,bad_35,bad_36,bad_37,bad_38,bad_39,bad_40,
+                            bad_41,bad_42,bad_43,bad_44,bad_45,bad_46,bad_47,bad_48,bad_49,bad_50,bad_52,bad_53,bad_54,bad_55,bad_56,bad_57,bad_58,bad_59],
+              //  borderColor: 'rgba(75, 192, 192, 1)',
+              borderColor: 'red',
+            pointRadius: 1,    
+                borderWidth: 2,
+                fill: false
+            }
+            ,*/
+                            {
+                          //  label: "Bad",
+                            // label: false,
+                            data: [120
+                              //  bad_0, bad_1, bad_2, bad_3, bad_4, bad_5, bad_6,bad_7,bad_8,bad_9,bad_10,
+                         //   bad_11,bad_12,bad_13,bad_14,bad_15,bad_16,bad_17,bad_18,bad_19,bad_20,
+                         //   bad_21,bad_22,bad_23,bad_24,bad_25,bad_26,bad_27,bad_28,bad_29,bad_30,
+                         //   bad_31,bad_32,bad_33,bad_34,bad_35,bad_36,bad_37,bad_38,bad_39,bad_40,
+                         //   bad_41,bad_42,bad_43,bad_44,bad_45,bad_46,bad_47,bad_48,bad_49,bad_50,bad_52,bad_53,bad_54,bad_55,bad_56,bad_57,bad_58,bad_59
+                            ],
+                            // borderColor: 'rgba(75, 192, 192, 1)',
+                            borderColor: 'green',
+                            pointRadius: 1,
+                            borderWidth: 2,
+                            fill: false
+                            }
+                   
+        ]
+        };
+ 
+        let options1 = {
+legend: {
+display: false
+},
+tooltips: {
+callbacks: {
+label: function(tooltipItem) {
+return tooltipItem.yLabel;
+}
+}
+},
+
+
+
+            events:[],
+            responsive: true,
+            maintainAspectRatio: false,
+        //    scales: {
+            //     yAxes: [{ticks: {min: 1, max:120}}],
+             //                     },
+       responsive: true,
+            scales: {
+                x: {
+                    type: 'category',
+                    position: 'bottom'
+                },
+                y: {
+                    max: 50,
+            min: 0,
+                  //  type: 'linear',
+                    position: 'left',
+                  //  ticks: {min: 1, max:120}
+                  yAxes: [{ticks: {min: 1, max:120}}],
+                }
+            },
+            plugins: {
+             //   legend: {
+   //   display: false
+ //   },
+    /*
+                annotation: {
+
+                    annotations: [{
+                     //   type: 'line',
+                     //   mode: 'vertical',
+                      //  scaleID: 'x',
+                      //  value: 'March',
+                      value: 'June',
+
+                        borderColor: 'red',
+                        borderWidth: 2,
+                        label: {
+                            enabled: true,
+                            content: 'Vertical Line'
+                        }
+                    }]
+                }
+                */
+            },
+            animation: {
+              //  "duration": 0,
+                "duration": 0.1,
+                "onComplete": function() {
+                    console.log("ddddd");
+                    ctx4.font = "bold 8px verdana, sans-serif";
+                    ctx4.fillStyle = "green";
+                    ctx4.fillText("QUALITY-SCRAP-ŠKART", 38, 10);
+                    /*
+                    ctx4.font = "bold 8px verdana, sans-serif";
+                    ctx4.fillStyle = "CYAN";
+                    ctx4.fillText("BAD", 72, 10);
+*/
+
+
+                    ctx4.font = "bold 8px verdana, sans-serif";
+                  //  context.fillStyle = "#00ff00";
+               //   ctx4.fillStyle = "blue";//#223D7E
+              //  ctx4.fillStyle = "#223D7E";
+                ctx4.fillStyle = "#285c24";
+                   // ctx4.textAlign = "start";
+                    ctx4.textAlign = "center";
+
+                  //  ctx4.fillText(100, 200, 40);  // radi
+              //  ctx4.fillText(100, 200, 40);
+                  ctx4.fillText("60 min machine performance in selected hour with Get data button", 750, 7);
+                  //  ctx4.fillText(100, 100, 40); 
+                   // [1].x
+                 //  ctx4.fillText(100, myCharte.getDatasetMeta(0).data[1].x, 40); 
+                   var g1= myCharte.getDatasetMeta(1).data
+                var g2= myCharte.getDatasetMeta
+             //   console.log("g2: "+g2);
+              //  console.log("meta: "+myCharte.getDatasetMeta(0));
+                //const myJSON = JSON.stringify(obj);
+                const myJSON = JSON.stringify(myCharte.getDatasetMeta);
+                 console.log("JSON: "+myJSON);
+                 //  console.log("g1: "+g1);
+              //     console.log("g1[0]: "+g1[0]);
+                   //[0]._view.x
+
+
+                 //  console.log("g1[0].x: "+g1[0].x);
+
+                   var g0= myCharte.getDatasetMeta(0).data
+                   console.log("g0: "+g0[0]);
+            //    console.log("g0: "+g0.$context.raw);
+                ////   console.log("g0[0]: "+g0[0]);
+                ////   console.log("g0[0].x: "+g0[0].x);
+                ////   console.log("g0[0].y: "+g0[0].y);
+                ////   console.log("g0[1].x: "+g0[1].x+"g0[1].y: "+g0[1].y);
+               //    ctx4.fillText("777-1", 115-8, 44-6); 
+                 //  ctx4.fillText("777-1", g0[1].x-8, g0[1].y-6); 
+                //   ctx4.fillText("777-2", g0[2].x-8, g0[2].y-6); 
+                //   ctx4.fillText("777-3", g0[3].x-8, g0[3].y-6); 
+
+                ////   ctx4.fillText(g0[4].$context.raw, g0[4].x, g0[4].y-6); 
+                 ////  ctx4.fillText(g0[5].$context.raw, g0[5].x, g0[5].y-6); 
+                 ////  ctx4.fillText(g0[6].$context.raw, g0[6].x, g0[6].y-6); 
+                        ctx4.fillText(myCharte.data.datasets[0].data[1],g0[1]._view.x, g0[1]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[2],g0[1]._view.x, g0[1]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[3],g0[2]._view.x, g0[2]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[3],g0[3]._view.x, g0[3]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[4],g0[4]._view.x, g0[4]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[5],g0[5]._view.x, g0[5]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g0[6]._view.x, g0[6]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[7],g0[7]._view.x, g0[7]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[8],g0[8]._view.x, g0[8]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[9],g0[9]._view.x, g0[9]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[10],g0[10]._view.x, g0[10]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[11],g0[11]._view.x, g0[11]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[12],g0[12]._view.x, g0[12]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[13],g0[13]._view.x, g0[13]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[14],g0[14]._view.x, g0[14]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[15],g0[15]._view.x, g0[15]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[16],g0[16]._view.x, g0[16]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[17],g0[17]._view.x, g0[17]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[18],g0[18]._view.x, g0[18]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[19],g0[19]._view.x, g0[19]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[20],g0[20]._view.x, g0[20]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[21],g0[21]._view.x, g0[21]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[22],g0[22]._view.x, g0[22]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[23],g0[23]._view.x, g0[23]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[24],g0[24]._view.x, g0[24]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[25],g0[25]._view.x, g0[25]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[26],g0[26]._view.x, g0[26]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[27],g0[27]._view.x, g0[28]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[28],g0[28]._view.x, g0[29]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[29],g0[29]._view.x, g0[30]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[30],g0[30]._view.x, g0[30]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[31],g0[31]._view.x, g0[31]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[32],g0[32]._view.x, g0[32]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[33],g0[33]._view.x, g0[33]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[34],g0[34]._view.x, g0[34]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[35],g0[35]._view.x, g0[35]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[36],g0[36]._view.x, g0[36]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[37],g0[37]._view.x, g0[37]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[38],g0[38]._view.x, g0[38]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[39],g0[39]._view.x, g0[39]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[40],g0[40]._view.x, g0[40]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[41],g0[41]._view.x, g0[41]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[42],g0[42]._view.x, g0[42]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[43],g0[43]._view.x, g0[43]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[44],g0[44]._view.x, g0[44]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[45],g0[45]._view.x, g0[45]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[46],g0[46]._view.x, g0[46]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[47],g0[47]._view.x, g0[47]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[48],g0[48]._view.x, g0[48]._view.y-5);
+                      
+                        ctx4.fillText(myCharte.data.datasets[0].data[49],g0[49]._view.x, g0[49]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[50],g0[50]._view.x, g0[50]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[51],g0[51]._view.x, g0[51]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[52],g0[52]._view.x, g0[52]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[53],g0[53]._view.x, g0[53]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[54],g0[54]._view.x, g0[54]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[55],g0[55]._view.x, g0[55]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[56],g0[56]._view.x, g0[56]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[57],g0[57]._view.x, g0[57]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[58],g0[58]._view.x, g0[58]._view.y-5);
+
+
+
+
+
+
+                //   ctx4.fillText("777", 27-8, 131-6); 
+
+                ctx4.fillStyle = "red";
+                   console.log("g1[0].x: "+g1[0].x);
+                   console.log("g1[0].y: "+g1[0].y); 
+                console.log("g1[0].yyyy: "+g1[0]._view.x);//radi Edge!!! ne Chrome
+                console.log("g1[0].yyyy: "+g1[0]._view.x); 
+/*
+                console.log("val: "+myCharte.data.datasets[0].data[0]+ "g1[0].xxx: "+g1[0]._view.x+"g1[0].yyy: "+g1[0]._view.y);
+                      ctx4.fillText(myCharte.data.datasets[0].data[0],g1[0]._view.x, g1[0]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[1],g1[1]._view.x, g1[1]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[2],g1[2]._view.x, g1[2]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[3],g1[3]._view.x, g1[3]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[4],g1[4]._view.x, g1[4]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[5],g1[5]._view.x, g1[5]._view.y-5);
+                      ctx4.fillText(myCharte.data.datasets[0].data[6],g1[6]._view.x, g1[6]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[7]._view.x, g1[7]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[8]._view.x, g1[8]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[9]._view.x, g1[9]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[10]._view.x, g1[10]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[11]._view.x, g1[11]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[12]._view.x, g1[12]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[13]._view.x, g1[13]._view.y-5);
+                        ctx4.fillText(myCharte.data.datasets[0].data[6],g1[14]._view.x, g1[14]._view.y-5);
+*/
+
+
+
+                   // console.log("g1[0].$context.raw: "+g1[0].$context.raw);
+                   // console.log("g1[0].$context.raw: "+g1[0].$context);
+                   //proba
+         ///////       ctx4.fillText(g1[0].$context.raw, g1[0].x, g1[0].y-6);
+                //[0]._view.x
+
+                ///////   ctx4.fillText(g1[0].$context.raw, g1[0].x, g1[0].y-6); 
+        //////           ctx4.fillText(g1[1].$context.raw, g1[1].x, g1[1].y-6); 
+         ///////          ctx4.fillText(g1[2].$context.raw, g1[2].x, g1[2].y-6); 
+                  // console.log("datasets[0]: "+data.datasets.data[0]);
+                   //.$context.raw
+                 ////  console.log("datasets[0]: "+g0[0].$context.raw);
+                 ////  console.log("datasets[1]: "+g0[1].$context.raw);
+                //   console.log("datasets[2]: "+g0[2].$context.raw);
+                console.log("ddddd");
+                }}
+        };
+        let ctx4 = document.getElementById('myCharte').getContext('2d');
+      //  ctx4.fillText(abc, 20, 40);
+  //  window.myChart.destroy();
+        let myCharte = new Chart(ctx4, {
+    //        window.myCharte.destroy();
+    //    if(window.myCharte != undefined)
+  //   {   window.myCharte.destroy();}
+    //    window.myCharte = new Chart(ctx4, {
+
+
+
+
+            type: 'line',
+            data: data,
+            options: options1,               
+        });
+     //   console.log("aaaaaa")
+     //   console.log(myCharte.getDatasetMeta(0).data)////nesto ima
+//console.log(myCharte.getDatasetMeta[0].data[0])//myCharte.data.datasets
+   //    console.log(myCharte.getDatasetMeta[0])//undefined razvij dalje
+// console.log(myCharte.getDatasetMeta[0].data)
+console.log("myCharte"+myCharte);
+console.log("myCharte.data"+myCharte.data);  // prikazuje sve!!!
+console.log(myCharte.data.datasets[0].data[0]);
+       console.log(myCharte.getDatasetMeta(0).data)
+      // ctx4.fillText(datasets[i].data[j], p._model.x, p._model.y - 20);
+     // ctx4.fillText(100, 20, 40); 
+                }; 
+  
+//  console.log("g00: "+g0.$context.raw);
+</script>
+<!--new charteeee end-->
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+                 <script>
+                    var socket = io();
+                
+                    socket.on('message', function(msg){
+                      console.log(msg);
+                     // document.getElementById("1_1_6_1").innerHTML = msg;
+                  //   document.getElementById("1_1_6_1").innerHTML = msg[0].num;
+                     console.log("msg.num",msg[0].num);
+                     donut=msg[0].donut;
+                     console.log("donut",msg[0].donut);
+                     chart1();
+
+                     const d = new Date();
+let minutes = d.getMinutes();
+// document.getElementById("demo").innerHTML = minutes;
+console.log("minutes",minutes);
+//let day = d.getDay()
+//console.log("day",day);
+let date = d.getDate();
+console.log("date",date);
+let year = d.getFullYear();
+console.log("year",year);
+let month = d.getMonth();
+console.log("month",month);
+
+let hour = d.getHours();
+console.log("hour",hour);   //1_1_7
+let month_r=month +1;
+//document.getElementById("1_1_6").innerHTML = hour+":"+minutes;
+//document.getElementById("1_1_7").innerHTML = date+":"+month_r+":"+year;//co2
+//document.getElementById("co2").innerHTML = date+":"+month_r+":"+year;
+
+//a3=msg[1].don;
+//document.getElementById("co2").innerHTML = msg[1].don;   //            !!!  SA KLIJENTA
+document.getElementById("co2").innerHTML = cntn; 
+//a3=10;
+chart3();
+chart4();
+chart1();
+chart5();
+chart11();
+chart111();
+
+                    });
+var cnt=1; 
+var cntn=1;  
+var niz=[15,17,0,4,24,15,23,16,17,8,  9,12,25,2,17,26,29,14,9,10,  2,17,20,2,26,14,8,14,9,17]                      
+                    setInterval( function() {
+cnt=cnt+1;
+if (cnt ==15) {cnt =1;}
+if (cnt <3) {cntn =1;}
+if (cnt >3 && cnt <6) {cntn =2;}
+if (cnt >6 && cnt <9) {cntn =3;}
+if (cnt >9 && cnt <12) {cntn =3;}
+if (cnt >12 && cnt <15) {cntn =4;}
+
+
+
+var g_1,g_2,g_3,g_4,g_5,g_6,g_7, g_8, g_9,g10,g11,g12, g13,g14,g15,g16,g17,g18,g19,g20,g21,g22,g23,g24,g25,g26,g27,g28,g29;
+if (cntn==1) 
+{
+a1=25;
+a2=12;
+a3=15;
+a4=3;
+a5=23;
+a6=16;
+a7=17;
+a8=21;
+a9=10;
+a10=10;
+a11=28;
+a12=21;
+a13=28;
+a14= 21; 
+a15=14;
+a16=10;
+a17=3; 
+a18=17; 
+a19=12;
+a20=16;
+a21=20;
+ a22=18;
+a23=15;
+a24=30; 
+a25=18;
+a26=3;
+a27=23;
+a28=14;
+a29=15;
+}
+if (cntn==2) {
+a2=25;
+a3=12;
+a4=15;
+a5=3;
+a6=23;
+a7=16;
+a8=17;
+a9=21;
+a10=10;
+a11=10;
+a12=28;
+a13=21;
+a14=28;
+a15= 21; 
+a16=14;
+a17=10;
+a18=3; 
+a19=17; 
+a20=12;
+a21=16;
+a22=20;
+ a23=18;
+a24=15;
+a25=17; 
+a26=18;
+a27=3;
+a28=23;
+a29=14;
+a30=15;
+}
+if (cntn==3) {
+a1=15;
+a2=25;
+a3=12;
+a4=15;
+a5=3;
+a6=23;
+a7=16;
+a8=17;
+a9=21;
+a10=10;
+a11=10;
+a12=28;
+a13=21;
+a14=28;
+a15= 21; 
+a16=14;
+a17=10;
+a18=3; 
+a19=17; 
+a20=12;
+a21=16;
+a22=20;
+ a23=18;
+a24=15;
+a25=17; 
+a26=18;
+a27=3;
+a28=23;
+a29=14;
+}
+if (cntn==4) { 
+a1=14;
+a2=15;
+a3=25;
+a4=12;
+a5=15;
+a6=3;
+a7=23;
+a8=16;
+a9=17;
+a10=21;
+a11=10;
+a12=10;
+a13=28;
+a14=21;
+a15=28;
+a16= 21; 
+a17=14;
+a18=10;
+a19=3; 
+a20=17; 
+a21=12;
+a22=16;
+a23=20;
+ a24=18;
+a25=15;
+a26=17; 
+a27=18;
+a28=3;
+a29=23;
+}
+if (cntn==5) { 
+a1=3;
+a2=23;}
+a3=14;
+a4=15;
+a5=25;
+a6=12;
+a7=15;
+a8=3;
+a9=23;
+a10=16;
+a11=17;
+a12=21;
+a13=10;
+a14=10;
+a15=28;
+a16=21;
+a17=28;
+a18= 21; 
+a19=14;
+a20=10;
+a21=3; 
+a22=17; 
+a23=12;
+a24=16;
+a25=20;
+ a26=18;
+a27=15;
+a28=17; 
+a29=18;
+
+
+if (cntn==6) {g_6=24;g_16=6;g_26=26;}
+if (cntn==7) {g_7=24;g_17=24;g_27=16;}
+if (cntn==8) {g_8=14;g_18=6;g_28=3;}
+if (cntn==9) {g_9=22;g_19=23;g_29=25;}
+
+
+
+//if(cnt<3){
+//  a1=g_1; a2=g_2;a3=g_3;
+// a4=g_4;a5=g_4;a6=g_5;a7=g_7;a8=g_8;a9=g_9;a10=g_10;a11=g_11;a12=g_12;  a13= g_13;    a14=g_14;a15=g_15; a16=g_16;  a17=g_17;   a18=g_18; a19=g_19; a20=g_20;a21=g_21;
+///  a22=15;a23=17;   a24=18;  a25=3;  a26=23; a27=14;   
+
+
+//  }
+/*
+if(cnt>3){
+a1=18; a2=20;a3=30;a4=10;a5=31  ;a6=30;a7=20;a8=10;a9=10;a10=15;a11=19;a12=15;a13=11;a14=25;a15=20;a16=20;  a17=20;   a18=10; a19=10; a20=10;a21=5
+
+a22=16;a23=8;   a24=30;  a25=3;  a26=2; a27=14; 
+;}
+*/
+if(cnt<3){
+m1=10; m2=15;m3=4;m4=2;m5=15  ;m6=10;m7=15;m8=14;m9=12;m10=20;m11=3;m12=30;m13=2;m14=3;m15=6; 
+;}
+if(cnt>3){
+m1=18; m2=20;m3=30;m4=10;m5=31  ;m6=30;m7=20;m8=10;m9=10;m10=15;m11=19;m12=15;m13=11;m14=25;m15=20; 
+;}
+
+if(cnt==1){
+f1=30; f2=5;f3=14;f4=12;f5=5  ;f6=20;f7=5;f8=4;f9=2;f10=2;f11=23;f12=5;f13=12;f14=3;f15=26; 
+a111=48;
+// document.getElementById("co2").innerHTML = "  Error: <br> Temp too high ";
+er_3_5="Station_5";    er_3_c_5=25;
+er_2_5="Tool_5";      er_2_c_5=35;
+er_1_5="SQL_Lite_5";        er_1_c_5=15; 
+
+er_3_4="Machine_4";    er_3_c_3=34;
+er_2_4="Empty_4";      er_2_c_3=4;
+er_1_4="Check_4";        er_1_c_3=14; 
+
+
+er_3_3="Safety_Door_3";    er_3_c_3=10;
+er_2_3="Shut Down_3";      er_2_c_3=33;
+er_1_3="Safe_ok_3";        er_1_c_3=3; 
+
+
+er_2_3="Safety_Door";    er_3_c_2=32;
+//er_3_2="Safety_Door";    er_3_c_2=10;
+er_2_2="Shut Down";      er_2_c_2=42;
+er_1_2="Safe_ok";        er_1_c_2=22; 
+
+er_3_1="Safety_Door";    er_3_c_1=10;
+er_2_1="Shut Down";      er_2_c_1=33;
+er_1_1="Safe_ok";        er_1_c_1=3;   
+good_0=17;
+good_10=23;
+qu_3=20;
+;}
+if(cntn==3){
+f1=8; f2=30;f3=3;f4=20;f5=2  ;f6=15;f7=8;f8=5;f9=4;f10=2;f11=9;f12=5;f13=21;f14=5;f15=10; 
+a111=58;
+// document.getElementById("co2").innerHTML = "  Error: <br> Wrong part number ";
+
+
+er_3_5="Station_5";    er_3_c_5=15;
+er_2_5="Spare_5";      er_2_c_5=45;
+er_1_5="SQL_5";        er_1_c_5=5; 
+
+er_3_4="Machine_4";    er_3_c_4=14;
+er_2_4="Shut Down_4";      er_2_c_4=44;
+er_1_4="Safe_ok_4";        er_1_c_4=4; 
+
+
+er_3_3="Safety_Door_3";    er_3_c_3=10;
+er_2_3="Shut Down_3";      er_2_c_3=33;
+er_1_3="Safe_ok_3";        er_1_c_3=3; 
+
+er_2_3="Station_2";    er_3_c_2=2;
+er_2_2="Station_1";      er_2_c_2=22;
+er_1_2="New WO";        er_1_c_2=12; 
+
+
+er_3_1="Safety_Barier";    er_3_c_1=10;
+er_2_1="No Power";        er_2_c_1=10;
+er_1_1="Stop OK";         er_1_c_1=5;
+good_0=7;
+good_10=3;
+qu_3=10;
+;}
+
+}, 1000);                       
+                  </script>
+  </div>
+   <!--     DIV2 SPA END  -->
+<!--     //  chart100();  -->
+
+
+
+
+
+<!--*************  full Screen************  -->
+<!--input type="button"      value="Fullscreen" onclick="toggleFullScreen()"  style="position: absolute;left: 1430px;  top: 30px;  background-COLOR:#141B2D; bORDER-COLOR: BLACK;color:#626C81;   " -->
+<script>
+  function toggleFullScreen() {
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+ (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+  if (document.documentElement.requestFullScreen) {  
+    document.documentElement.requestFullScreen();  
+  } else if (document.documentElement.mozRequestFullScreen) {  
+    document.documentElement.mozRequestFullScreen();  
+  } else if (document.documentElement.webkitRequestFullScreen) {  
+    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+  }  
+} else {  
+  if (document.cancelFullScreen) {  
+    document.cancelFullScreen();  
+  } else if (document.mozCancelFullScreen) {  
+    document.mozCancelFullScreen();  
+  } else if (document.webkitCancelFullScreen) {  
+    document.webkitCancelFullScreen();  
+  }  
+}  
+}
+
+</script>
+<!--************* full screen************  -->
+<script src="main.js"></script>
+<script src="/node_modules/jquery/src/"></script>
+<script src="/jquery.min.js"></script>
+</body>

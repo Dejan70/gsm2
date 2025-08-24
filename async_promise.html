@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript async / await</h1>
+<h2 id="demo">12</h2>
+<h3 id="demo1">23</h3>
+
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve("I love You !!");}, 3000);
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+async function myDisplay1() {
+  let myPromise1 = new Promise(function(resolve) {
+    setTimeout(function() {resolve("I love You More !!");}, 6000);
+  });
+  document.getElementById("demo1").innerHTML = await myPromise1;
+}
+
+myDisplay();
+myDisplay1();
+</script>
+
+</body>
+</html>

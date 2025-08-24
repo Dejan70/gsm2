@@ -1,0 +1,2022 @@
+<!DOCTYPE html> 
+      
+<html lang="en">
+<head>
+  <title>Food Packaging</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+
+
+  <!--link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+ <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" >
+
+<!--script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script-->
+
+
+
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script-->
+  <script src="./Chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!--datetime picker-->
+	<!--script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script-->
+
+	<!-- CSS CDN -->
+	<link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+
+	<!-- datetimepicker jQuery CDN -->
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+	</script>
+
+  <!--   datetime picker end   -->
+
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  /*
+  .jumbotron text-center {
+    height: 20px;
+}
+*/
+    .container {
+      /*  max-width: (1900px - @grid-gutter-width);   */
+      width: 90%;
+    min-width: 99%;
+    max-width: 100%;
+    margin-left: 7px;
+  /*  margin-right: 15px;    */
+    }
+  </style>
+</head>
+<body onload="myFunction1(),myFunction2()">  
+  <script>
+
+
+   // var donut=5;
+    var socket = io();
+
+    socket.on('message', function(msg){
+    //  console.log(msg);
+    //  console.log("msg");
+
+     // document.getElementById("1_1_6_1").innerHTML = msg;
+  //   document.getElementById("1_1_6_1").innerHTML = msg[0].num;
+    // console.log("msg.num",msg[0].num);
+   //  donut=msg[0].donut;
+   //  console.log("donut",msg[0].donut);
+   //  chart1();
+    });
+     </script>
+
+
+
+
+
+    <!--div c  ass="jumbotron text-center" style="margin-bottom:0; height: 80px;"-->
+<!--div class="jumbotron text-center" style="height: 5vh;margin-top: -25px;"-->
+  <h6 style="margin-top:5px">  <button class="save" mat-raised-button style=" background-COLOR:#222a2a00; bORDER-COLOR: rgb(119, 140, 185);color:#626C81;  position: absolute;  right: 0; "  onclick="toggleFullScreen()">Full</button><!--RADI BUTTON U FLEXU--> 
+  </h6>
+
+  <!--p>Resize this responsive page to see the effect!</p--> 
+<!--/div-->
+<!--Ajvar pocetak*******************************************************************************-->
+<button id="addBtn201" class="btn btn-sm btn-primary">/b201</button>
+<button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+<button id="addBtn203" class="btn btn-sm btn-primary">/b203</button>
+<button id="addBtn204" class="btn btn-sm btn-primary">/b204</button>
+ <!--     DIV1 SPA  -->
+<div class="overlay"  id="div1">
+
+<style>
+.overlay{
+    opacity:0.9;
+ /*   background-color:#ccc;    */
+    position:fixed;
+    width:100%;
+    height:90%;
+    top:40px;
+    left:0px;
+    z-index:1000;
+}
+</style>
+<div class="row" name="aj"style="height: 55vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn5" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200" class="btn btn-sm btn-primary">/b200</button>
+
+        <h4 id="1500"style="font-weight: bold;">PLC 15</h4>
+        <!--p id="1500">1500 10</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+        <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+        
+          <!-- CSS CDN -->
+          <link rel="stylesheet"
+            href=
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+        
+          <!-- datetimepicker jQuery CDN -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+           //   <!--script src="/public/datetimepicker.js"-->  
+          </script>
+        
+          <!-- Basic internal styling -->
+          <style>
+            body {
+              text-align: center;
+            }
+        
+            p {
+              font-size: 25px;
+              font-weight: bold;
+            }
+          </style>
+        </head>
+        
+        <body>
+       
+        
+         <style>
+        .de{ display: block; }
+        
+         </style>   
+          <input type="text" class="datetimepicker1 de"  id="meeting-time"style="font: 1em sans-serif;"/>
+          <input type="text" class="datetimepicker2  de"  id="meeting-time1"style="font: 1em sans-serif;"/>
+        
+          <script type="text/javascript">
+        
+        /*
+            $(".datetimepicker").each(function () {
+              $(this).datetimepicker();
+            });
+             */ 
+               
+                $(".datetimepicker1").datetimepicker(function () {
+              $(this).datetimepicker();
+                  //  defaultDate:'+03.01.1970'
+            }); 
+                 $(".datetimepicker2").datetimepicker(function () {
+              $(this).datetimepicker();
+            });
+                $('.datetimepicker1').datetimepicker({
+                
+        });
+        /*
+        $('.datetimepicker1').datetimepicker({
+	//formatTime:'H:i',
+//	formatTime:'H:i',
+//	formatDate:'d.m.Y',
+//formatDate:'YYYY.mm.dd',
+//	defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+//	defaultTime:'10:00',
+	//timepickerScrollbar:false,
+//	mask:'9999/19/39 29:59'
+});
+*/
+//$('.datetimepicker1').datetimepicker({value:'2015/04/15 05:03'});//  nesto radi
+//$('.datetimepicker1').datetimepicker({value:'2015/04/15 05:03'});
+//$('.datetimepicker1').datetimepicker({formatDate:'YYYY.mm.dd'});
+
+        /*
+        $( ".datetimepicker1" ).datepicker({
+                dateFormat: "yyyy/mm/dd"
+              });
+              */
+              $('.datetimepicker1').datetimepicker({
+
+	formatTime:'H:i',
+	formatDate:'d.m.Y',
+	//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+	// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+$('.datetimepicker2').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+
+       </script>
+       <!--NEW   INPUT-->
+       <!--input
+       type="datetime-local"
+       id="meeting-time1"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" /-->
+         </div>
+    <!--option   start-->
+    <div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place" class="form-control" onfocus='this.size=6;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+   document.getElementById("text1").readOnly = true;
+ //  document.getElementById("text1").innerHTML = "neki textyxcyxcycxycyxcyxcyxcyxcycxyxcyccycycyxcyxc";
+ document.getElementById("text1").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1500', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1500").style.color = '#03fc66';
+});
+socket.on('conn_1500b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1500").style.color = 'red'; 
+});
+socket.on('conn_1200', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = '#b1fc03';
+});
+socket.on('conn_1200b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = 'red'; 
+});
+socket.on('plc3', function(msg){
+  var table = document.getElementById("table");
+//table.rows[2].getElementsByTagName("td")[4].style.backgroundColor = '#CFB6BF';
+
+//table.rows[3].style.backgroundColor = '#CFB6BF';
+
+
+
+});
+socket.on('plc', function(msg){
+
+  console.log("socket");
+  console.log(msg);
+  console.log("msg");
+
+
+});
+
+</script>
+
+
+<button id="addBtn15" class="btn btn-sm btn-primary">Data_1</button>
+
+<!--button id="addBtn16" class="btn btn-sm btn-primary">off</button><button id="addBtn17" class="btn btn-sm btn-primary">on</button-->
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab1">
+    <caption>
+      Parts by Hours Line 1
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 1</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+//table js
+//document.getElementById("tab1").rows[0].cells[0].innerHTML=777;
+//document.getElementById("tab1").rows[0].height=55;
+
+//   table js
+
+
+
+
+  $(window).on('load', function() {
+ 
+ myFunction1()
+ myFunction2()
+});
+
+
+
+</script>
+<!--Ajvar kraj-->
+<!--Ajvar pocetak II                Ajvar   II******************************************************************-->
+<div class="row" name="aj"style="height: 60vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn55" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200_" class="btn btn-sm btn-primary">/b200_</buton>
+    
+        <button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+        <h4 style="font-weight: bold;" id="1200">PLC 12</h4>
+        <!--p id="1500">1500 10</p-->
+       
+
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time_"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+       <!--NEW   INPUT-->
+       <!--input
+       type="datetime-local"
+       id="meeting-time1_"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" /-->
+
+
+       <input type="text" class="datetimepicker3 de"  id="meeting-time_"style="font: 1em sans-serif;"/>
+       <input type="text" class="datetimepicker4  de"  id="meeting-time1_"style="font: 1em sans-serif;"/>
+     
+       <script type="text/javascript">
+     
+     /*
+         $(".datetimepicker").each(function () {
+           $(this).datetimepicker();
+         });
+          */ 
+            
+             $(".datetimepicker3").datetimepicker(function () {
+           $(this).datetimepicker();
+               //  defaultDate:'+03.01.1970'
+         }); 
+              $(".datetimepicker4").datetimepicker(function () {
+           $(this).datetimepicker();
+         });
+             $('.datetimepicker3').datetimepicker({
+             
+     });
+     /*
+     $('.datetimepicker1').datetimepicker({
+//formatTime:'H:i',
+//	formatTime:'H:i',
+//	formatDate:'d.m.Y',
+//formatDate:'YYYY.mm.dd',
+//	defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+//	defaultTime:'10:00',
+//timepickerScrollbar:false,
+//	mask:'9999/19/39 29:59'
+});
+*/
+//$('.datetimepicker1').datetimepicker({value:'2015/04/15 05:03'});//  nesto radi
+//$('.datetimepicker1').datetimepicker({value:'2015/04/15 05:03'});
+//$('.datetimepicker1').datetimepicker({formatDate:'YYYY.mm.dd'});
+
+     /*
+     $( ".datetimepicker1" ).datepicker({
+             dateFormat: "yyyy/mm/dd"
+           });
+           */
+           $('.datetimepicker3').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+$('.datetimepicker4').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+
+    </script>
+
+
+         </div>
+    <!--option   start--><div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place_" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1_" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+   document.getElementById("text1_").readOnly = true;
+ //  document.getElementById("text1").innerHTML = "neki textyxcyxcycxycyxcyxcyxcyxcycxyxcyccycycyxcyxc";
+ document.getElementById("text1_").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1200', function(msg){
+ // document.getElementById("table").;
+  //document.getElementById("1200").style.color = 'green';   //#03fc7f
+  document.getElementById("1200").style.color = '#b1fc03'; 
+
+});
+socket.on('conn_1200b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = 'red';
+
+});
+socket.on('plc3', function(msg){
+ // var table = document.getElementById("table");
+
+
+
+
+});
+socket.on('plc', function(msg){
+
+
+
+
+});
+
+</script>
+
+
+<button id="addBtn15_" class="btn btn-sm btn-primary">Data_2</button>
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab2">
+    <caption>
+      Parts by Hours Line 2
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 2</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+
+
+
+
+</script>
+<!--Ajvar kraj 22-->
+<!--div class="container" style="margin-top:5px;margin-left: 15px"-->
+<div class="container" style="margin-top:5px">
+  <div class="row" >      
+    <div class="col-sm-4" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;">
+
+      <!--button id="addBtn1" class='child inline-block-child'>Create</button-->
+   
+   
+    <div>     </div><div>    <p   style=" font-size:12px; color:black;" id="a2">O</p>  </div>
+
+
+    <script>
+   
+  </script>
+   <!--TIME INPUT-->
+
+
+
+    </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-4">
+   
+  
+
+      
+     
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+
+      <!--h2>TITLE HEADING</h2-->
+   
+
+      <!--p>Some text..</p-->
+       <p>.</p>
+      
+
+  
+    </div>
+  </div>
+  <div class="row">
+   
+</div>
+</div>
+
+</div>
+ <!--     DIV1 SPA END  -->
+
+<script>
+ 
+ socket.on('cons',function(msg){
+console.log("SERVER_MSG: ",msg)
+ })
+///prvi plc 1500
+ socket.on('plc1', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1 , msg.1",msg[1]);
+
+document.getElementById("tab1").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2",msg);
+
+document.getElementById("tab1").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3",msg);
+
+document.getElementById("tab1").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4",msg);
+
+document.getElementById("tab1").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5",msg);
+
+document.getElementById("tab1").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6",msg);
+
+document.getElementById("tab1").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7",msg);
+
+document.getElementById("tab1").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8', function(msg){
+
+console.log("socket");
+console.log("plc8",msg);
+
+document.getElementById("tab1").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table = document.getElementById("tab1");
+socket.on('colo', function(msg){
+//console.log("colo : ",msg);
+
+       if(msg[1]==1){table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+//document.getElementById("tab1").rows[1].cells[i].backgroundColor='#65d457'
+////drugi plc
+
+socket.on('plc1_', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1_",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1_ , msg.1",msg[1]);
+
+document.getElementById("tab2").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2_",msg);
+
+document.getElementById("tab2").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3_",msg);
+
+document.getElementById("tab2").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4_",msg);
+
+document.getElementById("tab2").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5_",msg);
+
+document.getElementById("tab2").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6_",msg);
+
+document.getElementById("tab2").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7_",msg);
+
+document.getElementById("tab2").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8_', function(msg){
+
+//console.log("socket");
+console.log("plc8_",msg);
+
+document.getElementById("tab2").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table_ = document.getElementById("tab2");
+socket.on('colo_', function(msg){
+//console.log("colo_ : ",msg);
+
+       if(msg[1]==1){table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+
+</script>            <!--script onload="chart100()"-->
+ <!--     DIV2 SPA   -->
+<div class="overlay2"  id ="div2">
+  <style>
+  .overlay2{
+      opacity:0.9;
+   /*   background-color:#ccc;   */
+ /*     position:fixed;
+      width:100%;
+      height:100%;
+      top:40px;
+      left:0px;
+      z-index:1000;  */
+  }
+  </style>
+<!--script src="./Chart.js"></script--><!--Bilo je-->
+<!--script src="https://cdn.jsdelivr.net/npm/chart.js"></script-->
+<script>
+  var a=10;
+var be=10;
+var a111;   
+var a1;      var a1_10; var a1_20; var a1_30; var a1_40; var a1_45;
+var a2;      var a2_10; var a2_20; var a2_30; var a2_40; var a2_45;
+var a3;      var a3_10; var a3_20; var a3_30; var a3_40; var a3_45;
+var a4;      var a4_10; var a4_20; var a4_30; var a4_40; var a4_45;
+var a5;       var a5_10; var a5_20; var a5_30; var a5_40; var a5_45;
+var a6;      var a6_10; var a6_20; var a6_30; var a6_40; var a6_45;
+var a7;      var a7_10; var a7_20; var a7_30; var a7_40; var a7_45;
+var a8;      var a8_10; var a8_20; var a8_30; var a8_40; var a8_45;
+var a9;///*********NOVO
+var a10;
+var a11;
+var a12;
+var a13;  var a20;var a27;   // var g1, var var g2,var g3, var g;4//,g5,g6,g7,g8,g9,g10, g11,g12,g13,g14,g15,g16,g17,g18,g19,g20, g21,g22,g23,g24,g25,2g6,g27,g28,g29,g30; //  visina bar-a
+var a14   ;var a21;var a28;    var g1;var g2; var g3; var g4;var g5; var g6; var g7;var g8; var g9; var g10;
+var a15;   var a22;var a29;    var g11;var g12; var g13; var g14;var g15; var g16; var g17;var g18; var g19; var g20;
+var a16  ;var a23;var a30;     var g21;var g22; var g23; var g24;var g25; var g26; var g27;var g28; var g29; var g30;
+var a17;  var a24;              var m1;var m2; var m3; var m4;var m5; var m6; var m7;var m8; var m9; var m10;var m11;var m12; var m13; var m14;var m15; 
+var a18;  var a25;               var f1;var f2; var f3; var f4;var f5; var f6; var f7;var f8; var f9; var f10;var f11;var f12; var f13; var f14;var f15;
+var a19;   var a26;
+
+var bb1=" "; var bb1_10=55;  bb1_20=" "; bb1_30=" "; bb1_40=" "; bb1_45=" ";
+var bb2=" "; var bb2_10=" "; bb2_20=" "; bb2_30=" "; bb2_40=" "; bb2_45=" ";
+var bb3=" "; var bb3_10=" "; bb3_20=" "; bb3_30=" "; bb3_40=" "; bb3_45=" ";
+var bb4=" "; var bb4_10=" "; bb4_20=" "; bb4_30=" "; bb4_40=" "; bb4_45=" ";
+var bb5=" "; var bb5_10=" "; bb5_20=" "; bb5_30=" "; bb5_40=" "; bb5_45=" ";
+var bb6=" "; var bb6_10=" "; bb6_20=" "; bb6_30=" "; bb6_40=" "; bb6_45=" ";
+var bb7=" "; var bb7_10=" "; bb7_20=" "; bb7_30=" "; bb7_40=" "; bb7_45=" ";
+var bb8=" "; var bb8_10=" "; bb8_20=" "; bb8_30=" "; bb8_40=" "; bb8_45=" ";
+
+var c1; var c1_10; var c1_20; var c1_30; var c1_40; var c1_45;
+var c2; var c2_10; var c2_20; var c2_30; var c2_40; var c2_45;
+var c3; var c3_10; var c3_20; var c3_30; var c3_40; var c3_45;
+var c4; var c4_10; var c4_20; var c4_30; var c4_40; var c4_45;
+var c5; var c5_10; var c5_20; var c5_30; var c5_40; var c5_45;
+var c6; var c6_10; var c6_20; var c6_30; var c6_40; var c6_45;
+var c7; var c7_10; var c7_20; var c7_30; var c7_40; var c7_45;
+var c8; var c8_10; var c8_20; var c8_30; var c8_40; var c8_45;
+
+var e1; var e1_10; var e1_20; var e1_30; var e1_40; var e1_45;
+var e2; var e2_10; var e2_20; var e2_30; var e2_40; var e2_45;
+var e3; var e3_10; var e3_20; var e3_30; var e3_40; var e3_45;
+var e4; var e4_10; var e4_20; var e4_30; var e4_40; var e4_45;
+var e5; var e5_10; var e5_20; var e5_30; var e5_40; var e5_45;
+var e6; var e6_10; var e6_20; var e6_30; var e6_40; var e6_45;
+var e7; var e7_10; var e7_20; var e7_30; var e7_40; var e7_45;
+var e8; var e8_10; var e8_20; var e8_30; var e8_40; var e8_45;
+
+var d1=0; var d11=10; var d20=19; var d30=29; var d40=39;               // oznaka  na x osi
+var d2=1; var d12=11; var d21=20; var d31=30;var d41=40;
+var d3=2; var d13=12; var d22=21; var d32=31;var d41=40;d48=47; d56=55;
+var d4=3; var d14=13; var d23=22; var d33=32;var d41=40;d49=48; d57=56;
+var d5=4; var d15=14; var d24=23; var d34=33;var d42=41;d50=49; d58=57;
+var d6=5; var d16=15; var d25=24; var d35=34;var d43=42;d51=50; d59=58;
+var d7=6; var d17=16; var d26=25; var d36=35;var d44=43;d52=51; d60=59;
+var d8=7; var d18=17; var d27=26; var d37=36;var d45=44;d53=52;
+var d9=8; var d18=17; var d28=27; var d38=37;var d46=45;d54=53;
+var d10=9; var d19=18; var d29=28;var d39=38;var d47=46;d55=54;
+//***SPARE
+var s1=1; var s11=83; var s20=31;var s30=88;
+var s2=2; var s12=83; var s21=41;var s31=55;
+var s3=3; var s13=39; var s22=41;
+var s4=4; var s14=34; var s23=77;
+var s5=5; var s15=38; var s24=44;
+var s6=6; var s16=37; var s25=55;
+var s7=7; var s17=12; var s26=33;
+var s8=8; var s18=57; var s27=45;
+var s9=9; var s19=41; var s28=48;
+var s10=10; var s20=22; var s29=47;
+
+//errrors
+er_1_1='er_1_1'; er_1_c_1=1; er_2_1='er_2_1'; er_2_c_1=2; er_3_1='er_3_1'; er_3_c_1=1;
+er_1_2='er_1_2'; er_1_c_2=1; er_2_2='er_2_2'; er_2_c_2=2; er_3_2='er_3_2'; er_3_c_2=3;
+er_1_3='er_1_3'; er_1_c_3=1; er_2_3='er_2_3'; er_2_c_3=2; er_3_3='er_3_3'; er_3_c_3=3;
+er_1_4='er_1_4'; er_1_c_4=1; er_2_4='er_2_4'; er_2_c_4=2; er_3_4='er_3_4'; er_3_c_4=3;
+er_1_5='er_1_5'; er_1_c_5=1; er_2_5='er_2_5'; er_2_c_5=2; er_3_5='er_3_5'; er_3_c_5=3;
+er_1_6='er_1_6'; er_1_c_6=1; er_2_6='er_2_6'; er_2_c_6=2; er_3_6='er_3_6'; er_3_c_6=3;
+er_1_7='er_1_7'; er_1_c_7=1; er_2_7='er_2_7'; er_2_c_7=2; er_3_7='er_3_7'; er_3_c_7=3;
+er_1_8='er_1_8'; er_1_c_8=1; er_2_8='er_2_8'; er_2_c_8=2; er_3_8='er_3_8'; er_3_c_8=3;
+er_1_9='er_1_9';  er_1_c_9=1;  er_2_9='er_2_9';   er_2_c_9=2;  er_3_9= 'er_3_9';   er_3_c_9=3;
+er_1_10='er_1_10'; er_1_c_10=1; er_2_10='er_2_10'; er_2_c_10=2; er_3_10='er_3_10'; er_3_c_10=3;
+er_1_11='er_1_11'; er_1_c_11=1; er_2_11='er_2_11'; er_2_c_11=2; er_3_11='er_3_11'; er_3_c_11=3;
+er_1_12='er_1_12'; er_1_c_12=1; er_2_12='er_2_12'; er_2_c_12=2; er_3_12='er_3_12'; er_3_c_12=3;
+er_1_14='er_1_14';
+
+//gra start
+good_0=""; good_1="";good_2=""; good_3="";good_4=""; good_5="";good_6=""; good_7="";good_8=""; good_9="";good_10=""; 
+good_11="";good_12=""; good_13="";good_14=""; good_15="";good_16=""; good_17="";good_18=""; good_19="";good_20="";
+good_21="";good_22=""; good_23="";good_24=""; good_25="";good_26=""; good_27="";good_28=""; good_29="";good_30="";
+good_31="";good_32=""; good_33="";good_34=""; good_35="";good_36=""; good_37="";good_38=""; good_39="";good_40="";
+good_41="";good_42=""; good_43="";good_44=""; good_45="";good_46=""; good_47="";good_48=""; good_49="";good_50="";
+good_51="";good_52=""; good_53="";good_54=""; good_55="";good_56=""; good_57="";good_58=""; good_59="";good_60="";
+
+bad_0=""; bad_1="";bad_2=""; bad_3="";bad_4=""; bad_5="";bad_6=""; bad_7="";bad_8=""; bad_9="";bad_10="";
+bad_11="";bad_12=""; bad_13="";bad_14=""; bad_15="";bad_16=""; bad_17="";bad_18=""; bad_19="";bad_20="";
+bad_21="";bad_22=""; bad_23="";bad_24=""; bad_25="";bad_26=""; bad_27="";bad_28=""; bad_29="";bad_30="";
+bad_31="";bad_32=""; bad_33="";bad_34=""; bad_35="";bad_36=""; bad_37="";bad_38=""; bad_39="";bad_40="";
+bad_41="";bad_42=""; bad_43="";bad_44=""; bad_45="";bad_46=""; bad_47="";bad_48=""; bad_49="";bad_50="";
+bad_51="";bad_52=""; bad_53="";bad_54=""; bad_55="";bad_56=""; bad_57="";bad_58=""; bad_59="";bad_60="";
+
+qu_0=""; qu_1="";qu_2=""; qu_3="";qu_4=""; qu_5="";qu_6=""; qu_7="";qu_8=""; qu_9="";qu_10="";
+qu_11="";qu_12=""; qu_13="";qu_14=""; qu_15="";qu_16=""; qu_17="";qu_18=""; qu_19="";qu_20="";
+qu_21="";qu_22=""; qu_23="";qu_24=""; qu_25="";qu_26=""; qu_27="";qu_28=""; qu_29="";qu_30="";
+qu_31="";qu_32=""; qu_33="";qu_34=""; qu_35="";qu_36=""; qu_37="";qu_38=""; qu_39="";qu_40="";
+qu_41="";qu_42=""; qu_43="";qu_44=""; qu_45="";qu_46=""; qu_47="";qu_48=""; qu_49="";qu_50="";
+qu_51="";qu_52=""; qu_53="";qu_54=""; qu_55="";qu_56=""; qu_57="";qu_58=""; qu_59="";qu_60="";
+
+
+
+
+
+
+
+
+
+//gra end
+
+var donut_1=0;
+var donut_2=0;
+</script>
+<!--Boots start-->
+<div class="row" name="row"style="height:20vh;width: 100%; ">      
+  <div class="col-sm-1" name="aj1" style="margin-top:5px; display: flex; flex-direction: column; gap: 10%;height: 100%;">
+         <div style="height: 10%;gap: 1%;">OEE1</div>
+    
+    <div style=" height: 70%; min-height: 70%;min-width: 60%;">
+    
+
+        
+          
+
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <!--button id="addBtn5" class="btn btn-sm btn-primary">Period</button-->
+        <!--button id="addBtn200" class="btn btn-sm btn-primary">/200</button-->
+
+        <!--h4 id="1500"style="font-weight: bold;">PLC 15</h4-->
+        <!--p id="1500">1500 10</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+  <!-- NEW DONUT START -->
+            <canvas id="myChart1001" style="width:100%; height:80%;max-height:80%"></canvas>
+                                    <script>
+                          //  var donut;
+donut_1=22;
+                                   //   chart_d();
+                                        //  ok
+                              function chart_d1(){
+                                console.log("shad_d")
+                                          //cc
+                                        //  var a1;
+                                         // a1=donut;
+                                      //   var donut;
+                                      //  donut=33;
+                                      //  a111=33; /// dodato za test donut  izbrisi                                         donut=a111;
+                                        var data = {
+                                    //  labels: ["Blue","Red"],
+                                  //  lll
+                                      datasets: [
+                                        {
+                                        //  data: [a1, 100-a1],// bilo je
+                                        data: [donut_1, 100-donut_1],
+                    
+                                      //    backgroundColor: ["#1eb343","#36A2EB"],
+                                     backgroundColor: ["green","#9da39d"],  //#626C81  
+                                   //   backgroundColor: ["#1eb343","#626C81"],
+                    
+                                        }]
+                                    };
+                                    
+                                    Chart.pluginService.register({
+                                      beforeDraw: function(chart) {
+                                        var width = chart.chart.width,
+                                            height = chart.chart.height,
+                                            ctx1 = chart.chart.ctx,
+                                            type = chart.config.type;
+                                    
+                                        if (type == 'doughnut')
+                                        {
+                                          var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                                                        (chart.config.data.datasets[0].data[0] +
+                                                        chart.config.data.datasets[0].data[1]));
+                                          var oldFill = ctx1.fillStyle;
+                                          var fontSize = ((height - chart.chartArea.top) / 70).toFixed(2);
+                                    //      var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+                                          
+                                          ctx1.restore();
+                                       //  ctx.font = fontSize + "em sans-serif";    //staro
+                                          ctx1.font = fontSize + "em sans-serif";
+                                          ctx1.fillStyle = "red";
+                                      //  ctx.Colour="red";
+                                  //  ctx.font.fillStyle = "red";
+                                     
+                                     //  ctx.font =  "arial bold" + fontSize ;
+                                  //  ctx.font = fontSize + "em arial";
+                             //   ctx.font = "bold 100px arial";  //  novo ok
+                                //    ctx.font = "bold"+ fontSize +"arial";
+                                          ctx1.textBaseline = "middle";
+                                    
+                                          var text = percent + "%",
+                                              textX = Math.round((width - ctx1.measureText(text).width) / 2),
+                                              textY = (height + chart.chartArea.top) / 2;
+                                          
+                                     //     ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+                                    //    ctx.fillStyle ="white";  // staro
+                                    ctx1.fillStyle ="#626C81";
+                                          ctx1.fillText(text, textX, textY);
+                                          ctx1.fillStyle = oldFill;
+                                         //   text.fillStyle = "red";
+                                          ctx1.save();
+                                        }
+                                      }
+                                    });
+                                    
+                                    var myChart10 = new Chart(document.getElementById('myChart1001'), {
+                                      type: 'doughnut',
+                                      data: data,
+                                      options: {  events:[],
+                                        cutoutPercentage:85,
+                                     //   percentageInnerCutout : 90,
+                                  //    cutoutInnerPercentage:80,
+                                        animation: {
+                                        duration: 0
+                                        },
+                                          elements: {
+                                          arc: {
+                                          borderWidth: 0
+                                          }
+                                          },
+                                        responsive: true,
+                                        legend: {
+                                          display: false
+                                        }
+                                      }
+                                    });
+                                        };
+                                    </script>
+                                    <!-- NEW DONUT END-->
+
+
+
+        </div>
+  </div>
+  <div class="col-sm-1" name="aj2" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;height: 100%;">
+       <div style="display: flex;flex-direction: column;min-height: 30%;gap: 10%;">
+           <!-- NEW DONUT START -->
+            <!-- NOVO -->
+           <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script-->
+       
+         <div style="height: 10%;gap: 1%;">OEE2</div>
+    
+    <div style=" height: 70%; min-height: 70%;min-width: 60%;">
+    
+
+        
+          
+
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <!--button id="addBtn5" class="btn btn-sm btn-primary">Period</button-->
+        <!--button id="addBtn200" class="btn btn-sm btn-primary">/200</button-->
+
+        <!--h4 id="1500"style="font-weight: bold;">PLC 15</h4-->
+        <!--p id="1500">1500 10</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+  <!-- NEW DONUT START -->
+            <canvas id="myChart1002" style="width:80px; height:80px;max-height:80%"></canvas>
+                                    <script>
+                          //  var donut;
+//donut_2=22;
+                                   //   chart_d();
+                                        //  ok
+                              function chart_d2(){
+                                console.log("shad_d2")
+                                          //cc
+                                        //  var a1;
+                                         // a1=donut;
+                                  //       var donut;
+                                    //   donut=33;
+                                      //  a111=33; /// dodato za test donut  izbrisi                                         donut=a111;
+                                        var data = {
+                                    //  labels: ["Blue","Red"],
+                                  //  lll
+                                      datasets: [
+                                        {
+                                        //  data: [a1, 100-a1],// bilo je
+                                        data: [donut_2, 100-donut_2],
+                    
+                                      //    backgroundColor: ["#1eb343","#36A2EB"],
+                                     backgroundColor: ["green","#9da39d"],  //#626C81  
+                                   //   backgroundColor: ["#1eb343","#626C81"],
+                    
+                                        }]
+                                    };
+                                    
+                                    Chart.pluginService.register({
+                                      beforeDraw: function(chart) {
+                                        var width = chart.chart.width,
+                                            height = chart.chart.height,
+                                            ctx1 = chart.chart.ctx,
+                                            type = chart.config.type;
+                                    
+                                        if (type == 'doughnut')
+                                        {
+                                          var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                                                        (chart.config.data.datasets[0].data[0] +
+                                                        chart.config.data.datasets[0].data[1]));
+                                          var oldFill = ctx1.fillStyle;
+                                          var fontSize = ((height - chart.chartArea.top) / 70).toFixed(2);
+                                    //      var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+                                          
+                                          ctx1.restore();
+                                       //  ctx.font = fontSize + "em sans-serif";    //staro
+                                          ctx1.font = fontSize + "em sans-serif";
+                                          ctx1.fillStyle = "red";
+                                      //  ctx.Colour="red";
+                                  //  ctx.font.fillStyle = "red";
+                                     
+                                     //  ctx.font =  "arial bold" + fontSize ;
+                                  //  ctx.font = fontSize + "em arial";
+                             //   ctx.font = "bold 100px arial";  //  novo ok
+                                //    ctx.font = "bold"+ fontSize +"arial";
+                                          ctx1.textBaseline = "middle";
+                                    
+                                          var text = percent + "%",
+                                              textX = Math.round((width - ctx1.measureText(text).width) / 2),
+                                              textY = (height + chart.chartArea.top) / 2;
+                                          
+                                     //     ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+                                    //    ctx.fillStyle ="white";  // staro
+                                    ctx1.fillStyle ="#626C81";
+                                          ctx1.fillText(text, textX, textY);
+                                          ctx1.fillStyle = oldFill;
+                                         //   text.fillStyle = "red";
+                                          ctx1.save();
+                                        }
+                                      }
+                                    });
+                                    
+                                    var myChart10 = new Chart(document.getElementById('myChart1002'), {
+                                      type: 'doughnut',
+                                      data: data,
+                                      options: {  events:[],
+                                        cutoutPercentage:85,
+                                     //   percentageInnerCutout : 90,
+                                  //    cutoutInnerPercentage:80,
+                                        animation: {
+                                        duration: 0
+                                        },
+                                          elements: {
+                                          arc: {
+                                          borderWidth: 0
+                                          }
+                                          },
+                                        responsive: true,
+                                        legend: {
+                                          display: false
+                                        }
+                                      }
+                                    });
+                                        };
+                                    </script>
+                                    <!-- NEW DONUT END-->
+
+
+
+        </div>
+  </div>
+    
+          
+    
+  </div>
+  <div class="col-sm-2"name="aj3" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;height: 100%;">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+                     <!--canvas id="myChart2" style="width:100%;max-width:600px"></canvas-->
+
+<script>
+  /*
+const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+const yValues = [55, 49, 44, 24, 15];
+const barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    },
+
+    title: {
+      display: true,
+      text: "Drugi World Wine Production 2018"
+    }
+  }
+});
+*/
+</script>
+
+    </div>
+</div>
+<div class="col-sm-3"name="aj4" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;height: 100%;">
+  <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+   
+        <canvas id="myChart6" style="width:100%;max-width:570px;height:155px;"></canvas>
+                        <script>
+                          //  chart3();
+               function chart3(){ 
+              //proba 5 start  levi chart
+              if(a1
+              <1){a1=""};if(a2<1){a2=""};if(a3<1){a3=""};if(a4<1){a4=""};if(a5<1){a5=""};if(a6<1){a6=""};if(a7<1){a7=""};if(a8<1){a8=""};if(a9<1){a9=""};if(a10<1){a10=""};if(a11<1){a11=""};if(a12<1){a12=""};if(a13<1){a13=""};if(a14<1){a14=""};if(a15<1){a15=""};if(a16<1){a16=""};if(a17<1){a17=""};if(a18<1){a18=""};if(a19<1){a19=""};if(a20<1){a20=""};
+                if(c1<1){c1="" };if(c2<1){c2="" };if(c3<1){c3="" };if(c4<1){c4="" };if(c5<1){c5="" };if(c6<1){c6="" };if(c7<1){c7=""
+                };if(c8<1){c8="" }; if(e1<1){e1="" };if(e2<1){e2="" };if(e3<1){e3="" };if(e4<1){e4="" };if(e5<1){e5=""
+                };if(e6<1){e6="" };if(e7<1){e7="" };if(e8<1){e8="" };
+              //proba5 end
+              
+              
+              //var xValues = ["op10","op20",300,400,500,600,700,800,900,1000];
+               //bilo je ok// var xValues = ["op10","op20",300,400,500,600,700,800];
+                          //    var xValues = [bb1_10,bb2,bb3,bb4,bb5,bb6,bb7,bb8];
+                               var xValues = [d1,d2,d3,d4,5,5,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30];
+              new Chart("myChart6", {
+               
+              type: "bar",
+               
+              
+              data: {
+              labels: xValues,
+              datasets: [
+                
+                {
+              label: 'Good parts in minu >>',
+              data: [10,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30],
+              borderColor: "green",
+              fill: true,backgroundColor: "blue",
+              
+              }
+              /*, 
+              {
+              label: 'Bad Parts',
+              //data: [160,170,170,190,200,270,40,50],
+                data: [c1,c2,c3,c4,c5,c6,c7,c8],
+              borderColor: "red",
+              fill: true,backgroundColor: "red",
+              fill: false
+              }
+              */
+              /*,
+               {
+              label: 'OEE [%]',
+              //data: [30,70,200,50,60,40,200,100,200,100],
+                data: [e1,e2,e3,e4,e5,e6,e7,e8],  
+              borderColor: "blue",
+              fill: true,backgroundColor: "blue",
+              fill: false
+              }
+              */
+              /*
+              ,
+              
+              {
+              label: 'man mode [%]',
+              data: [20,50,20,60,60,40,100,200,20,100],
+              borderColor: "yellow",
+              fill: true,backgroundColor: "yellow",
+              fill: false
+              }
+              */
+              ,
+              ]
+              },
+              
+              options: {
+
+                events:[],// ubija sve ali lepo redi
+              //proba1
+              axisX:{
+              "title": "Axis Title in Tahoma Font",
+              // titleFontFamily: "tahoma"
+              },
+              //proba1 end
+              
+                //test
+                "hover": {
+                "animationDuration": 0
+                },
+                "animation": {
+                "duration": 1,
+                "onComplete": function() {
+                var chartInstance = this.chart,
+                ctx = chartInstance.ctx;
+                
+                ctx.font = Chart.helpers.fontString(12,Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle,
+                Chart.defaults.global.defaultFontFamily);
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+            ctx.textsize = 20;
+                //test11
+                this.data.datasets.forEach(function(dataset, i) {
+                var meta = chartInstance.controller.getDatasetMeta(i);
+                meta.data.forEach(function(bar, index) {
+                var data = dataset.data[index];
+                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                });
+                });
+                }
+                },
+                //testend
+              // legend: {display: false}
+              
+              legend: {display: true},
+              
+              scales: {
+              yAxes: [{ticks: {min: 1, max:120}}],
+              }
+              }
+              });
+                        }
+                       //*************************kraj grafa 1  
+                        </script>
+
+
+  </div>
+</div>
+<div class="col-sm-3" name="aj5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;height: 100%;">
+  <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      <canvas id="myChart8" style="width:100%;max-width:570px;;height:160px; "></canvas>
+                        <script>
+                          //  chart4();
+   function chart4(){ 
+  //proba 5 start   chart desni sa oee
+  if(a1<1){a1=""};if(a2<1){a2=""};if(a3<1){a3=""};if(a4<1){a4=""};if(a5<1){a5=""};if(a6<1){a6=""};if(a7<1){a7=""};if(a8<1){a8=""};
+    if(c1<1){c1="" };if(c2<1){c2="" };if(c3<1){c3="" };if(c4<1){c4="" };if(c5<1){c5="" };if(c6<1){c6="" };if(c7<1){c7=""
+    };if(c8<1){c8="" }; if(e1<1){e1="" };if(e2<1){e2="" };if(e3<1){e3="" };if(e4<1){e4="" };if(e5<1){e5=""
+    };if(e6<1){e6="" };if(e7<1){e7="" };if(e8<1){e8="" };
+  //proba5 end
+  
+  
+  //var xValues = ["op10","op20",300,400,500,600,700,800,900,1000];
+   //bilo je ok// var xValues = ["op10","op20",300,400,500,600,700,800];
+                 // var xValues = ["Settings  ","Waiting Material ","Regular Mintenance","Tehnologic Reason","automatic steering errors","Unknown reasons"];
+                 //   var xValues = [g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15];
+          //      var xValues = [10,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15];
+                  var xValues = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
+               //var xValues = [g1,g2,g3,g4,g5,g6,g7,g8,g9,g10, g11,g12,g13,g14,g15,g16,g17,g18,g19,g20, g21,g22,g23,g24,g25,2g6,g27,g28,g29,g30 ];
+  new Chart("myChart8", {
+   
+  type: "bar",
+   
+  
+  data: {
+  labels: xValues,
+  datasets: [
+    
+    {
+  label: 'Good Parts',
+  data: [10,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15],
+  borderColor: "green",
+  fill: true,backgroundColor: "blue",
+  
+  },
+
+  {
+  label: 'Bad Parts',
+  //data: [160,170,170,190,200,270,40,50],
+  //  data: [c1,c2,c3,c4,c5,c6,c7,c8],
+   data: [m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15],
+  borderColor: "red",
+  fill: true,backgroundColor: "red",
+  fill: false
+  }
+
+  ,
+  
+  
+   {
+  label: 'Motor[sec in min]',
+  //data: [30,70,200,50,60,40,200,100,200,100],
+    data: [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15],  
+  borderColor: "#6872FB",
+  // fill: true,backgroundColor: "#DD534D",// #ff6600
+  fill: true,backgroundColor: "#006633",// #ff6600  ;  darkgreen  ;
+  fill: false
+  }
+  
+  /*
+  ,
+  
+  {
+  label: 'man mode [%]',
+  data: [20,50,20,60,60,40,100,200,20,100],
+  borderColor: "yellow",
+  fill: true,backgroundColor: "yellow",
+  fill: false
+  }
+  */
+ // ,
+  ]
+  },
+  
+  options: {
+      events:[],
+  //proba1
+  axisX:{
+  "title": "Axis Title in Tahoma Font",
+  // titleFontFamily: "tahoma"
+  },
+  //proba1 end
+  
+    //test
+    "hover": {
+    "animationDuration": 0
+    },
+    "animation": {
+    "duration": 1,
+    "onComplete": function() {
+    var chartInstance = this.chart,
+    ctx = chartInstance.ctx;
+    
+    ctx.font = Chart.helpers.fontString(10,Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle,
+    Chart.defaults.global.defaultFontFamily);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    
+    this.data.datasets.forEach(function(dataset, i) {
+    var meta = chartInstance.controller.getDatasetMeta(i);
+    meta.data.forEach(function(bar, index) {
+    var data = dataset.data[index];
+    ctx.fillText(data, bar._model.x, bar._model.y - 5);
+    });
+    });
+    }
+    },
+    //testend
+  // legend: {display: false}
+  
+  legend: {display: true},
+  
+  scales: {
+  yAxes: [{ticks: {min: 1, max:120}}],
+ // yAxes: [{ticks: {{fontColor: "#5ac4da"},{min: 1, max:130}}}],
+  }
+  }
+  });
+            }
+           //*************************kraj grafa 1  
+                        </script>             
+
+
+  </div>
+</div>
+<div class="col-sm-1" name="aj6"style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;height: 100%;">
+  <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+   
+
+  </div>
+</div>
+</div>
+
+
+<!--Boots div2   end-->
+
+
+
+  </div>
+   <!--     DIV2 SPA END  -->
+<!--     //  chart100();  -->
+
+
+
+
+
+<!--*************  full Screen************  -->
+<!--input type="button"      value="Fullscreen" onclick="toggleFullScreen()"  style="position: absolute;left: 1430px;  top: 30px;  background-COLOR:#141B2D; bORDER-COLOR: BLACK;color:#626C81;   " -->
+<script>
+  function toggleFullScreen() {
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+ (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+  if (document.documentElement.requestFullScreen) {  
+    document.documentElement.requestFullScreen();  
+  } else if (document.documentElement.mozRequestFullScreen) {  
+    document.documentElement.mozRequestFullScreen();  
+  } else if (document.documentElement.webkitRequestFullScreen) {  
+    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+  }  
+} else {  
+  if (document.cancelFullScreen) {  
+    document.cancelFullScreen();  
+  } else if (document.mozCancelFullScreen) {  
+    document.mozCancelFullScreen();  
+  } else if (document.webkitCancelFullScreen) {  
+    document.webkitCancelFullScreen();  
+  }  
+}  
+}
+
+</script>
+<!--************* full screen************  -->
+<script src="main.js"></script>
+<script src="/node_modules/jquery/src/"></script>
+<script src="/jquery.min.js"></script>
+</body>

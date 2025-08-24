@@ -1,0 +1,835 @@
+<!DOCTYPE html> 
+      
+<html lang="en">
+<head>
+  <title>Food Packaging</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+
+
+  <!--link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+ <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" >
+
+<!--script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script-->
+
+
+
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script-->
+  <script src="./Chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!--datetime picker-->
+	<!--script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script-->
+
+	<!-- CSS CDN -->
+	<link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+
+	<!-- datetimepicker jQuery CDN -->
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+	</script>
+
+  <!--   datetime picker end   -->
+
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  /*
+  .jumbotron text-center {
+    height: 20px;
+}
+*/
+    .container {
+      /*  max-width: (1900px - @grid-gutter-width);   */
+      width: 90%;
+    min-width: 99%;
+    max-width: 100%;
+    margin-left: 7px;
+  /*  margin-right: 15px;    */
+    }
+  </style>
+</head>
+<body onload="myFunction1(),myFunction2()">  
+  <script>
+
+
+   // var donut=5;
+    var socket = io();
+
+    socket.on('message', function(msg){
+    //  console.log(msg);
+    //  console.log("msg");
+
+     // document.getElementById("1_1_6_1").innerHTML = msg;
+  //   document.getElementById("1_1_6_1").innerHTML = msg[0].num;
+    // console.log("msg.num",msg[0].num);
+   //  donut=msg[0].donut;
+   //  console.log("donut",msg[0].donut);
+   //  chart1();
+    });
+     </script>
+
+
+
+
+
+    <!--div c  ass="jumbotron text-center" style="margin-bottom:0; height: 80px;"-->
+<!--div class="jumbotron text-center" style="height: 5vh;margin-top: -25px;"-->
+  <h6 style="margin-top:5px">  <!--button class="save" mat-raised-button style=" background-COLOR:#222a2a00; bORDER-COLOR: rgb(119, 140, 185);color:#626C81;  position: absolute;  right: 0; "  onclick="toggleFullScreen()">Full</button--><!--RADI BUTTON U FLEXU--> 
+  </h6>
+
+  <!--p>Resize this responsive page to see the effect!</p--> 
+<!--/div-->
+<!--Ajvar pocetak*******************************************************************************-->
+<!--button id="addBtn201" class="btn btn-sm btn-primary">/b201</button>
+<button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+<button id="addBtn203" class="btn btn-sm btn-primary">/b203</button>
+<button id="addBtn204" class="btn btn-sm btn-primary">/b204</button>
+<button id="addBtn205" class="btn btn-sm btn-primary">/b205</button>
+<script>
+
+  
+  // $('#div3').hide();
+</script>
+ <!--     DIV1 SPA  -->
+<div class="overlay"  id="div1">
+
+<style>
+.overlay{
+    opacity:0.9;
+ /*   background-color:#ccc;    */
+    position:fixed;
+    width:100%;
+    height:90%;
+    top:40px;
+    left:0px;
+    z-index:1000;
+}
+</style>
+<div class="row" name="aj"style="height: 55vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn5" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200" class="btn btn-sm btn-primary">/b200</button>
+
+        <h4 id="1500"style="font-weight: bold;">PLC 15</h4>
+        <!--p id="1500">1500 10</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+        <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+        
+          <!-- CSS CDN -->
+          <link rel="stylesheet"
+            href=
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+        
+          <!-- datetimepicker jQuery CDN -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+           //   <!--script src="/public/datetimepicker.js"-->  
+          </script>
+        
+          <!-- Basic internal styling -->
+          <style>
+            body {
+              text-align: center;
+            }
+        
+            p {
+              font-size: 25px;
+              font-weight: bold;
+            }
+          </style>
+        </head>
+        
+        <body>
+       
+        
+         <style>
+        .de{ display: block; }
+        
+         </style>   
+          <input type="text" class="datetimepicker1 de"  id="meeting-time"style="font: 1em sans-serif;"/>
+          <input type="text" class="datetimepicker2  de"  id="meeting-time1"style="font: 1em sans-serif;"/>
+        
+          <script type="text/javascript">
+        
+        /*
+            $(".datetimepicker").each(function () {
+              $(this).datetimepicker();
+            });
+             */ 
+               
+function _0x4eed(){var _0x73e29c=['948408CleNTt','15ZEFOjj','1607032ySuGyG','.datetimepicker1','7181322crpWtf','.datetimepicker2','datetimepicker','d.m.Y','7UFGedG','204225KsGDOU','Y-m-d\x20H:i','26161920jQuBlV','.selector','541626YmMWWG','H:i','342908zGLcZs'];_0x4eed=function(){return _0x73e29c;};return _0x4eed();}var _0x27c294=_0x37dc;function _0x37dc(_0x333dd6,_0x88dd6f){var _0x4eed16=_0x4eed();return _0x37dc=function(_0x37dc99,_0x42e428){_0x37dc99=_0x37dc99-0x7b;var _0x29d0ca=_0x4eed16[_0x37dc99];return _0x29d0ca;},_0x37dc(_0x333dd6,_0x88dd6f);}(function(_0x4df45f,_0x5341ad){var _0x41b798=_0x37dc,_0x1a5a17=_0x4df45f();while(!![]){try{var _0x3cc64a=parseInt(_0x41b798(0x89))/0x1+-parseInt(_0x41b798(0x7b))/0x2+parseInt(_0x41b798(0x85))/0x3+parseInt(_0x41b798(0x7e))/0x4*(-parseInt(_0x41b798(0x7d))/0x5)+-parseInt(_0x41b798(0x80))/0x6+parseInt(_0x41b798(0x84))/0x7*(-parseInt(_0x41b798(0x7c))/0x8)+parseInt(_0x41b798(0x87))/0x9;if(_0x3cc64a===_0x5341ad)break;else _0x1a5a17['push'](_0x1a5a17['shift']());}catch(_0x309e9c){_0x1a5a17['push'](_0x1a5a17['shift']());}}}(_0x4eed,0xc945f),$('.datetimepicker1')[_0x27c294(0x82)](function(){$(this)['datetimepicker']();}),$(_0x27c294(0x81))[_0x27c294(0x82)](function(){var _0x5913b5=_0x27c294;$(this)[_0x5913b5(0x82)]();}),$(_0x27c294(0x7f))[_0x27c294(0x82)]({}),$(_0x27c294(0x7f))[_0x27c294(0x82)]({'formatTime':_0x27c294(0x8a),'formatDate':_0x27c294(0x83),'format':'Y-m-d\x20H:i'}),$('.datetimepicker2')[_0x27c294(0x82)]({'formatTime':_0x27c294(0x8a),'formatDate':'d.m.Y','dayOfWeekStart':0x1,'format':_0x27c294(0x86)}),$(_0x27c294(0x88))['datepicker']({'firstDay':0x5}));
+       </script>
+
+         </div>
+   
+    <div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+     
+      
+       <div class="wrapper"><select name="Nr"  id="place" class="form-control" onfocus='this.size=6;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<textarea id="text1" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+ var _0x578b30=_0x5deb;function _0x4dc0(){var _0x57b3ac=['526mcrtFn','red','conn_1200','innerHTML','70610LQLimx','#03fc66','5iREVwA','1200','log','2065fPjvOY','plc2','4054780odWwvN','getElementById','369uvDUkl','5560YfIOdF','466569RDsgdm','table','style','13425ZgwDIO','conn_1500b','plc','socket','text1','984072yVknMR','color','msg','1500','88lzdqxI','255648TBAKeC'];_0x4dc0=function(){return _0x57b3ac;};return _0x4dc0();}function _0x5deb(_0xdb9ab5,_0x381fee){var _0x4dc0e6=_0x4dc0();return _0x5deb=function(_0x5deb2c,_0x1a12de){_0x5deb2c=_0x5deb2c-0xf1;var _0x17fbaf=_0x4dc0e6[_0x5deb2c];return _0x17fbaf;},_0x5deb(_0xdb9ab5,_0x381fee);}(function(_0x5cfde8,_0x16749c){var _0x2a2f26=_0x5deb,_0x3ad803=_0x5cfde8();while(!![]){try{var _0x5a708b=parseInt(_0x2a2f26(0xf9))/0x1+-parseInt(_0x2a2f26(0x107))/0x2*(-parseInt(_0x2a2f26(0xfc))/0x3)+-parseInt(_0x2a2f26(0xf5))/0x4+parseInt(_0x2a2f26(0x10d))/0x5*(parseInt(_0x2a2f26(0x101))/0x6)+parseInt(_0x2a2f26(0xf3))/0x7*(-parseInt(_0x2a2f26(0xf8))/0x8)+parseInt(_0x2a2f26(0xf7))/0x9*(parseInt(_0x2a2f26(0x10b))/0xa)+parseInt(_0x2a2f26(0x105))/0xb*(-parseInt(_0x2a2f26(0x106))/0xc);if(_0x5a708b===_0x16749c)break;else _0x3ad803['push'](_0x3ad803['shift']());}catch(_0x33fa76){_0x3ad803['push'](_0x3ad803['shift']());}}}(_0x4dc0,0xacd0f),document[_0x578b30(0xf6)]('text1')['readOnly']=!![],document[_0x578b30(0xf6)](_0x578b30(0x100))[_0x578b30(0x10a)]='');var socket=io();socket['on'](_0x578b30(0xf4),function(_0xdbd931){var _0x47628a=_0x578b30;console[_0x47628a(0xf2)](_0x47628a(0xff)),console[_0x47628a(0xf2)](_0x47628a(0xf4),_0xdbd931);}),socket['on']('conn_1500',function(_0x47046a){var _0x11e016=_0x578b30;document[_0x11e016(0xf6)]('1500')[_0x11e016(0xfb)]['color']=_0x11e016(0x10c);}),socket['on'](_0x578b30(0xfd),function(_0x3700db){var _0x5e3993=_0x578b30;document[_0x5e3993(0xf6)](_0x5e3993(0x104))['style']['color']=_0x5e3993(0x108);}),socket['on'](_0x578b30(0x109),function(_0x3f8ee5){var _0x42a516=_0x578b30;document[_0x42a516(0xf6)](_0x42a516(0xf1))[_0x42a516(0xfb)][_0x42a516(0x102)]='#b1fc03';}),socket['on']('conn_1200b',function(_0x2fe403){var _0x5ac7d2=_0x578b30;document[_0x5ac7d2(0xf6)](_0x5ac7d2(0xf1))[_0x5ac7d2(0xfb)][_0x5ac7d2(0x102)]=_0x5ac7d2(0x108);}),socket['on']('plc3',function(_0x597832){var _0x3ada85=_0x578b30,_0x31d768=document[_0x3ada85(0xf6)](_0x3ada85(0xfa));}),socket['on'](_0x578b30(0xfe),function(_0x48d1c6){var _0x226b0f=_0x578b30;console[_0x226b0f(0xf2)](_0x226b0f(0xff)),console['log'](_0x48d1c6),console['log'](_0x226b0f(0x103));});
+
+</script>
+
+
+
+  </div>
+  <div class="col-sm-7"name="aj2">
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+
+
+   
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab1">
+    <caption>
+      Parts by Hours Line 1
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 1</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+
+
+
+
+  $(window).on('load', function() {
+ 
+ myFunction1()
+ myFunction2()
+});
+
+
+
+</script>
+<div class="row" name="aj"style="height: 60vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+
+        <button id="addBtn55" class="btn btn-sm btn-primary">Period</button>
+
+    
+        <button id="addBtn200_" class="btn btn-sm btn-primary">/b202</button>
+        <h4 style="font-weight: bold;" id="1200">PLC 12</h4>
+       
+       
+
+    </div>
+   
+
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time_"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+       <!--NEW   INPUT-->
+       <!--input
+       type="datetime-local"
+       id="meeting-time1_"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" /-->
+
+
+       <input type="text" class="datetimepicker3 de"  id="meeting-time_"style="font: 1em sans-serif;"/>
+       <input type="text" class="datetimepicker4  de"  id="meeting-time1_"style="font: 1em sans-serif;"/>
+     
+       <script type="text/javascript">
+     
+     /*
+         $(".datetimepicker").each(function () {
+           $(this).datetimepicker();
+         });
+          */ 
+            
+             $(".datetimepicker3").datetimepicker(function () {
+           $(this).datetimepicker();
+               //  defaultDate:'+03.01.1970'
+         }); 
+              $(".datetimepicker4").datetimepicker(function () {
+           $(this).datetimepicker();
+         });
+             $('.datetimepicker3').datetimepicker({
+             
+     });
+
+           $('.datetimepicker3').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+$('.datetimepicker4').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+
+    </script>
+
+
+         </div>
+    <!--option   start--><div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place_" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1_" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+<script>
+ 
+
+</script>
+
+
+<!--button id="addBtn15_" class="btn btn-sm btn-primary">Data_2</button-->
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab2">
+    <caption>
+      Parts by Hours Line 2
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 2</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+
+
+
+
+</script>
+<!--Ajvar kraj 22-->
+<!--div class="container" style="margin-top:5px;margin-left: 15px"-->
+<div class="container" style="margin-top:5px">
+  <div class="row" >      
+    <div class="col-sm-4" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;">
+
+      <!--button id="addBtn1" class='child inline-block-child'>Create</button-->
+   
+   
+    <div>     </div><div>    <p   style=" font-size:12px; color:black;" id="a2">O</p>  </div>
+
+
+    <script>
+   
+  </script>
+   <!--TIME INPUT-->
+
+
+
+    </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-4">
+   
+  
+
+      
+     
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+
+      <!--h2>TITLE HEADING</h2-->
+   
+
+      <!--p>Some text..</p-->
+       <p>.</p>
+      
+
+  
+    </div>
+  </div>
+  <div class="row">
+   
+</div>
+</div>
+
+</div>
+ <!--     DIV1 SPA END  -->
+
+<script>
+var _0x3fe27f=_0xbe22;function _0xbe22(_0x225fc5,_0x58af8d){var _0xdf535c=_0xdf53();return _0xbe22=function(_0xbe2255,_0x17bd8b){_0xbe2255=_0xbe2255-0x163;var _0x27206f=_0xdf535c[_0xbe2255];return _0x27206f;},_0xbe22(_0x225fc5,_0x58af8d);}(function(_0x1ef795,_0x334649){var _0x1b0624=_0xbe22,_0x2159e4=_0x1ef795();while(!![]){try{var _0x19f8b9=parseInt(_0x1b0624(0x18f))/0x1*(parseInt(_0x1b0624(0x163))/0x2)+parseInt(_0x1b0624(0x175))/0x3+-parseInt(_0x1b0624(0x182))/0x4+-parseInt(_0x1b0624(0x17f))/0x5*(parseInt(_0x1b0624(0x16c))/0x6)+parseInt(_0x1b0624(0x181))/0x7*(-parseInt(_0x1b0624(0x18a))/0x8)+parseInt(_0x1b0624(0x193))/0x9+-parseInt(_0x1b0624(0x194))/0xa*(-parseInt(_0x1b0624(0x16d))/0xb);if(_0x19f8b9===_0x334649)break;else _0x2159e4['push'](_0x2159e4['shift']());}catch(_0x2335dc){_0x2159e4['push'](_0x2159e4['shift']());}}}(_0xdf53,0x49c7d),document[_0x3fe27f(0x192)]('text1_')[_0x3fe27f(0x174)]=!![],document[_0x3fe27f(0x192)](_0x3fe27f(0x18c))['innerHTML']='');var socket=io();socket['on'](_0x3fe27f(0x195),function(_0x59c1dd){var _0x48e20f=_0x3fe27f;console['log']('socket'),console[_0x48e20f(0x167)](_0x48e20f(0x195),_0x59c1dd);}),socket['on'](_0x3fe27f(0x16e),function(_0x2a3480){var _0x591a13=_0x3fe27f;document['getElementById']('1200')[_0x591a13(0x168)][_0x591a13(0x184)]=_0x591a13(0x17a);}),socket['on'](_0x3fe27f(0x177),function(_0x4d104a){var _0x42f5d7=_0x3fe27f;document['getElementById'](_0x42f5d7(0x169))['style'][_0x42f5d7(0x184)]=_0x42f5d7(0x189);}),socket['on'](_0x3fe27f(0x173),function(_0x297a0f){}),socket['on']('plc',function(_0x2a3eb1){}),socket['on'](_0x3fe27f(0x178),function(_0x45df80){var _0x52e4d2=_0x3fe27f;console[_0x52e4d2(0x167)](_0x52e4d2(0x18b),_0x45df80);}),socket['on'](_0x3fe27f(0x170),function(_0x3ecfd1){var _0x4b6099=_0x3fe27f;console[_0x4b6099(0x167)](_0x4b6099(0x185)),console['log'](_0x4b6099(0x170),_0x3ecfd1),console[_0x4b6099(0x167)](_0x4b6099(0x18e),_0x3ecfd1[0x1]),document[_0x4b6099(0x192)]('tab1')[_0x4b6099(0x17d)][0x2]['cells'][0x1][_0x4b6099(0x171)]=_0x3ecfd1[0x1];for(i=0x1;i++;i<0x24){document['getElementById'](_0x4b6099(0x180))['rows'][0x2][_0x4b6099(0x17b)][i][_0x4b6099(0x171)]=_0x3ecfd1[i];}}),socket['on'](_0x3fe27f(0x195),function(_0x4af07a){var _0xa98d86=_0x3fe27f;console['log']('socket'),console[_0xa98d86(0x167)]('plc2',_0x4af07a),document[_0xa98d86(0x192)]('tab1')[_0xa98d86(0x17d)][0x3][_0xa98d86(0x17b)][0x1][_0xa98d86(0x171)]=_0x4af07a[0x1];for(i=0x1;i++;i<0x24){document['getElementById'](_0xa98d86(0x180))[_0xa98d86(0x17d)][0x3]['cells'][i][_0xa98d86(0x171)]=_0x4af07a[i];}}),socket['on'](_0x3fe27f(0x173),function(_0x33f050){var _0x3f6997=_0x3fe27f;console[_0x3f6997(0x167)]('socket'),console[_0x3f6997(0x167)]('plc3',_0x33f050),document['getElementById'](_0x3f6997(0x180))[_0x3f6997(0x17d)][0x4][_0x3f6997(0x17b)][0x1][_0x3f6997(0x171)]=_0x33f050[0x1];for(i=0x1;i++;i<0x24){document[_0x3f6997(0x192)]('tab1')[_0x3f6997(0x17d)][0x4]['cells'][i]['innerHTML']=_0x33f050[i];}}),socket['on'](_0x3fe27f(0x176),function(_0x2f9967){var _0x59e6ae=_0x3fe27f;console[_0x59e6ae(0x167)](_0x59e6ae(0x185)),console[_0x59e6ae(0x167)](_0x59e6ae(0x176),_0x2f9967),document[_0x59e6ae(0x192)](_0x59e6ae(0x180))[_0x59e6ae(0x17d)][0x5][_0x59e6ae(0x17b)][0x1][_0x59e6ae(0x171)]=_0x2f9967[0x1];for(i=0x1;i++;i<0x24){document['getElementById'](_0x59e6ae(0x180))['rows'][0x5][_0x59e6ae(0x17b)][i][_0x59e6ae(0x171)]=_0x2f9967[i];}}),socket['on'](_0x3fe27f(0x16b),function(_0x51292b){var _0x120bd1=_0x3fe27f;console[_0x120bd1(0x167)](_0x120bd1(0x185)),console[_0x120bd1(0x167)](_0x120bd1(0x16b),_0x51292b),document[_0x120bd1(0x192)](_0x120bd1(0x180))['rows'][0x6][_0x120bd1(0x17b)][0x1][_0x120bd1(0x171)]=_0x51292b[0x1];for(i=0x1;i++;i<0x24){document['getElementById'](_0x120bd1(0x180))[_0x120bd1(0x17d)][0x6][_0x120bd1(0x17b)][i][_0x120bd1(0x171)]=_0x51292b[i];}}),socket['on']('plc6',function(_0x4b3908){var _0x43e76a=_0x3fe27f;console[_0x43e76a(0x167)](_0x43e76a(0x185)),console[_0x43e76a(0x167)]('plc6',_0x4b3908),document['getElementById']('tab1')['rows'][0x7][_0x43e76a(0x17b)][0x1]['innerHTML']=_0x4b3908[0x1];for(i=0x1;i++;i<0x24){document[_0x43e76a(0x192)]('tab1')[_0x43e76a(0x17d)][0x7][_0x43e76a(0x17b)][i]['innerHTML']=_0x4b3908[i];}}),socket['on'](_0x3fe27f(0x188),function(_0x4a4eea){var _0x1d3f88=_0x3fe27f;console[_0x1d3f88(0x167)](_0x1d3f88(0x185)),console[_0x1d3f88(0x167)](_0x1d3f88(0x188),_0x4a4eea),document[_0x1d3f88(0x192)]('tab1')[_0x1d3f88(0x17d)][0x8][_0x1d3f88(0x17b)][0x1][_0x1d3f88(0x171)]=_0x4a4eea[0x1];for(i=0x1;i++;i<0x24){document[_0x1d3f88(0x192)](_0x1d3f88(0x180))[_0x1d3f88(0x17d)][0x8][_0x1d3f88(0x17b)][i][_0x1d3f88(0x171)]=_0x4a4eea[i];}}),socket['on']('plc8',function(_0x47e3e4){var _0x13bdae=_0x3fe27f;console[_0x13bdae(0x167)](_0x13bdae(0x185)),console['log']('plc8',_0x47e3e4),document[_0x13bdae(0x192)](_0x13bdae(0x180))[_0x13bdae(0x17d)][0x9]['cells'][0x1][_0x13bdae(0x171)]=_0x47e3e4[0x1];for(i=0x1;i++;i<0x24){document[_0x13bdae(0x192)](_0x13bdae(0x180))[_0x13bdae(0x17d)][0x9][_0x13bdae(0x17b)][i][_0x13bdae(0x171)]=_0x47e3e4[i];}});var table=document[_0x3fe27f(0x192)](_0x3fe27f(0x180));function _0xdf53(){var _0x3d0c0b=['333612ARvmqD','plc4','conn_1200b','cons','plc6_','#b1fc03','cells','#32ed41','rows','plc2_','1745HMNbHG','tab1','49VYQafA','554140PWygaj','plc1_','color','socket','backgroundColor','plc3_','plc7','red','58648AkrEWS','SERVER_MSG:\x20','text1_','5000','plc1\x20,\x20msg.1','403zfeSej','colo_','getElementsByTagName','getElementById','3932361KIhikG','10JVRftY','plc2','388tufesM','white','plc7_','tab2','log','style','1200','plc4_','plc5','5784GtNdYv','2223958yLjlhG','conn_1200','plc8_','plc1','innerHTML','plc5_','plc3','readOnly'];_0xdf53=function(){return _0x3d0c0b;};return _0xdf53();}socket['on']('colo',function(_0xc2c864){var _0x2a9127=_0x3fe27f;_0xc2c864[0x1]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x1-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x225353=_0x2a9127;table[_0x225353(0x17d)][0x2][_0x225353(0x191)]('td')[0x1-0x1][_0x225353(0x168)]['backgroundColor']=_0x225353(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x2]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x2-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x391860=_0x2a9127;table[_0x391860(0x17d)][0x2][_0x391860(0x191)]('td')[0x2-0x1][_0x391860(0x168)][_0x391860(0x186)]='white';},'5000'));;_0xc2c864[0x3]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x3-0x1]['style'][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x5c9110=_0x2a9127;table[_0x5c9110(0x17d)][0x2][_0x5c9110(0x191)]('td')[0x3-0x1][_0x5c9110(0x168)][_0x5c9110(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0x4]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x4-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x16df05=_0x2a9127;table[_0x16df05(0x17d)][0x2]['getElementsByTagName']('td')[0x4-0x1][_0x16df05(0x168)]['backgroundColor']=_0x16df05(0x164);},'5000'));;_0xc2c864[0x5]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x5-0x1][_0x2a9127(0x168)]['backgroundColor']=_0x2a9127(0x17c),setTimeout(()=>{var _0x532e79=_0x2a9127;table[_0x532e79(0x17d)][0x2][_0x532e79(0x191)]('td')[0x5-0x1]['style'][_0x532e79(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0x6]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x6-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x1bbc53=_0x2a9127;table[_0x1bbc53(0x17d)][0x2]['getElementsByTagName']('td')[0x6-0x1]['style']['backgroundColor']=_0x1bbc53(0x164);},'5000'));;_0xc2c864[0x7]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x7-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3f1bb5=_0x2a9127;table[_0x3f1bb5(0x17d)][0x2][_0x3f1bb5(0x191)]('td')[0x7-0x1][_0x3f1bb5(0x168)][_0x3f1bb5(0x186)]=_0x3f1bb5(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x8]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x8-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0xac056e=_0x2a9127;table[_0xac056e(0x17d)][0x2]['getElementsByTagName']('td')[0x8-0x1][_0xac056e(0x168)][_0xac056e(0x186)]=_0xac056e(0x164);},'5000'));;_0xc2c864[0x9]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x9-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0xf8986a=_0x2a9127;table[_0xf8986a(0x17d)][0x2][_0xf8986a(0x191)]('td')[0x9-0x1][_0xf8986a(0x168)][_0xf8986a(0x186)]=_0xf8986a(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0xa]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xa-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x481b1c=_0x2a9127;table[_0x481b1c(0x17d)][0x2][_0x481b1c(0x191)]('td')[0xa-0x1][_0x481b1c(0x168)][_0x481b1c(0x186)]=_0x481b1c(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0xb]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xb-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x32baf9=_0x2a9127;table[_0x32baf9(0x17d)][0x2][_0x32baf9(0x191)]('td')[0xb-0x1][_0x32baf9(0x168)][_0x32baf9(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0xc]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xc-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x415766=_0x2a9127;table['rows'][0x2][_0x415766(0x191)]('td')[0xc-0x1][_0x415766(0x168)]['backgroundColor']=_0x415766(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0xd]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xd-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x1fb5c6=_0x2a9127;table[_0x1fb5c6(0x17d)][0x2][_0x1fb5c6(0x191)]('td')[0xd-0x1][_0x1fb5c6(0x168)][_0x1fb5c6(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0xe]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xe-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x4e579c=_0x2a9127;table[_0x4e579c(0x17d)][0x2][_0x4e579c(0x191)]('td')[0xe-0x1]['style'][_0x4e579c(0x186)]=_0x4e579c(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0xf]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0xf-0x1]['style'][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0xa51f06=_0x2a9127;table['rows'][0x2][_0xa51f06(0x191)]('td')[0xf-0x1]['style']['backgroundColor']='white';},_0x2a9127(0x18d)));;_0xc2c864[0x10]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x10-0x1][_0x2a9127(0x168)]['backgroundColor']=_0x2a9127(0x17c),setTimeout(()=>{var _0x49a9b0=_0x2a9127;table['rows'][0x2][_0x49a9b0(0x191)]('td')[0x10-0x1][_0x49a9b0(0x168)][_0x49a9b0(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0x11]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x11-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x33d7a4=_0x2a9127;table[_0x33d7a4(0x17d)][0x2][_0x33d7a4(0x191)]('td')[0x11-0x1]['style']['backgroundColor']=_0x33d7a4(0x164);},'5000'));;_0xc2c864[0x12]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x12-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x5360a3=_0x2a9127;table[_0x5360a3(0x17d)][0x2][_0x5360a3(0x191)]('td')[0x12-0x1][_0x5360a3(0x168)]['backgroundColor']=_0x5360a3(0x164);},'5000'));;_0xc2c864[0x13]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x13-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x2f84cb=_0x2a9127;table['rows'][0x2]['getElementsByTagName']('td')[0x13-0x1][_0x2f84cb(0x168)]['backgroundColor']='white';},_0x2a9127(0x18d)));;_0xc2c864[0x14]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x14-0x1]['style']['backgroundColor']=_0x2a9127(0x17c),setTimeout(()=>{var _0x183778=_0x2a9127;table[_0x183778(0x17d)][0x2][_0x183778(0x191)]('td')[0x14-0x1][_0x183778(0x168)][_0x183778(0x186)]=_0x183778(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x15]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x15-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3efd77=_0x2a9127;table['rows'][0x2][_0x3efd77(0x191)]('td')[0x15-0x1][_0x3efd77(0x168)][_0x3efd77(0x186)]=_0x3efd77(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x16]==0x1&&(table['rows'][0x2]['getElementsByTagName']('td')[0x16-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0xadc5a3=_0x2a9127;table[_0xadc5a3(0x17d)][0x2][_0xadc5a3(0x191)]('td')[0x16-0x1][_0xadc5a3(0x168)]['backgroundColor']='white';},_0x2a9127(0x18d)));;_0xc2c864[0x17]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x17-0x1][_0x2a9127(0x168)]['backgroundColor']=_0x2a9127(0x17c),setTimeout(()=>{var _0x5ed610=_0x2a9127;table[_0x5ed610(0x17d)][0x2]['getElementsByTagName']('td')[0x17-0x1][_0x5ed610(0x168)][_0x5ed610(0x186)]=_0x5ed610(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x18]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x18-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x2533f1=_0x2a9127;table[_0x2533f1(0x17d)][0x2]['getElementsByTagName']('td')[0x18-0x1]['style'][_0x2533f1(0x186)]=_0x2533f1(0x164);},'5000'));;_0xc2c864[0x19]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x19-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0xb90095=_0x2a9127;table[_0xb90095(0x17d)][0x2][_0xb90095(0x191)]('td')[0x19-0x1][_0xb90095(0x168)][_0xb90095(0x186)]=_0xb90095(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x1a]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x1a-0x1][_0x2a9127(0x168)]['backgroundColor']=_0x2a9127(0x17c),setTimeout(()=>{var _0x33a79f=_0x2a9127;table['rows'][0x2][_0x33a79f(0x191)]('td')[0x1a-0x1][_0x33a79f(0x168)][_0x33a79f(0x186)]=_0x33a79f(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x1b]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x1b-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3ba967=_0x2a9127;table[_0x3ba967(0x17d)][0x2][_0x3ba967(0x191)]('td')[0x1b-0x1][_0x3ba967(0x168)][_0x3ba967(0x186)]=_0x3ba967(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x1c]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x1c-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x12e2f1=_0x2a9127;table[_0x12e2f1(0x17d)][0x2][_0x12e2f1(0x191)]('td')[0x1c-0x1][_0x12e2f1(0x168)][_0x12e2f1(0x186)]=_0x12e2f1(0x164);},'5000'));;_0xc2c864[0x1d]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x1d-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x4bab4f=_0x2a9127;table[_0x4bab4f(0x17d)][0x2]['getElementsByTagName']('td')[0x1d-0x1][_0x4bab4f(0x168)]['backgroundColor']=_0x4bab4f(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x1e]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x1e-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3e8ba8=_0x2a9127;table[_0x3e8ba8(0x17d)][0x2][_0x3e8ba8(0x191)]('td')[0x1e-0x1][_0x3e8ba8(0x168)][_0x3e8ba8(0x186)]=_0x3e8ba8(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x1f]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x1f-0x1]['style'][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x304d3a=_0x2a9127;table[_0x304d3a(0x17d)][0x2][_0x304d3a(0x191)]('td')[0x1f-0x1][_0x304d3a(0x168)]['backgroundColor']=_0x304d3a(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x20]==0x1&&(table['rows'][0x2][_0x2a9127(0x191)]('td')[0x20-0x1]['style'][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x12e3ea=_0x2a9127;table['rows'][0x2][_0x12e3ea(0x191)]('td')[0x20-0x1][_0x12e3ea(0x168)][_0x12e3ea(0x186)]='white';},_0x2a9127(0x18d)));;_0xc2c864[0x21]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x21-0x1]['style'][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3194a4=_0x2a9127;table['rows'][0x2][_0x3194a4(0x191)]('td')[0x21-0x1][_0x3194a4(0x168)][_0x3194a4(0x186)]=_0x3194a4(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x22]==0x1&&(table[_0x2a9127(0x17d)][0x2]['getElementsByTagName']('td')[0x22-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x3a2016=_0x2a9127;table[_0x3a2016(0x17d)][0x2]['getElementsByTagName']('td')[0x22-0x1][_0x3a2016(0x168)]['backgroundColor']=_0x3a2016(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x23]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x23-0x1][_0x2a9127(0x168)][_0x2a9127(0x186)]=_0x2a9127(0x17c),setTimeout(()=>{var _0x2b64e0=_0x2a9127;table[_0x2b64e0(0x17d)][0x2][_0x2b64e0(0x191)]('td')[0x23-0x1][_0x2b64e0(0x168)][_0x2b64e0(0x186)]=_0x2b64e0(0x164);},_0x2a9127(0x18d)));;_0xc2c864[0x24]==0x1&&(table[_0x2a9127(0x17d)][0x2][_0x2a9127(0x191)]('td')[0x24-0x1]['style'][_0x2a9127(0x186)]='#32ed41',setTimeout(()=>{var _0x546c62=_0x2a9127;table[_0x546c62(0x17d)][0x2]['getElementsByTagName']('td')[0x24-0x1][_0x546c62(0x168)]['backgroundColor']=_0x546c62(0x164);},_0x2a9127(0x18d)));;}),socket['on'](_0x3fe27f(0x183),function(_0x79b331){var _0x3c0a44=_0x3fe27f;console[_0x3c0a44(0x167)](_0x3c0a44(0x185)),console['log']('plc1_',_0x79b331),console['log']('plc1_\x20,\x20msg.1',_0x79b331[0x1]),document[_0x3c0a44(0x192)](_0x3c0a44(0x166))[_0x3c0a44(0x17d)][0x2][_0x3c0a44(0x17b)][0x1][_0x3c0a44(0x171)]=_0x79b331[0x1];for(i=0x1;i++;i<0x24){document['getElementById'](_0x3c0a44(0x166))[_0x3c0a44(0x17d)][0x2]['cells'][i]['innerHTML']=_0x79b331[i];}}),socket['on'](_0x3fe27f(0x17e),function(_0x1d10bb){var _0x45050c=_0x3fe27f;console[_0x45050c(0x167)](_0x45050c(0x185)),console[_0x45050c(0x167)](_0x45050c(0x17e),_0x1d10bb),document[_0x45050c(0x192)](_0x45050c(0x166))[_0x45050c(0x17d)][0x3][_0x45050c(0x17b)][0x1][_0x45050c(0x171)]=_0x1d10bb[0x1];for(i=0x1;i++;i<0x24){document[_0x45050c(0x192)](_0x45050c(0x166))[_0x45050c(0x17d)][0x3]['cells'][i]['innerHTML']=_0x1d10bb[i];}}),socket['on'](_0x3fe27f(0x187),function(_0x18e37c){var _0x5dcf2e=_0x3fe27f;console['log'](_0x5dcf2e(0x185)),console[_0x5dcf2e(0x167)](_0x5dcf2e(0x187),_0x18e37c),document['getElementById']('tab2')[_0x5dcf2e(0x17d)][0x4][_0x5dcf2e(0x17b)][0x1][_0x5dcf2e(0x171)]=_0x18e37c[0x1];for(i=0x1;i++;i<0x24){document['getElementById']('tab2')[_0x5dcf2e(0x17d)][0x4][_0x5dcf2e(0x17b)][i][_0x5dcf2e(0x171)]=_0x18e37c[i];}}),socket['on'](_0x3fe27f(0x16a),function(_0x24f57d){var _0x5cf917=_0x3fe27f;console[_0x5cf917(0x167)]('socket'),console[_0x5cf917(0x167)](_0x5cf917(0x16a),_0x24f57d),document['getElementById'](_0x5cf917(0x166))[_0x5cf917(0x17d)][0x5]['cells'][0x1][_0x5cf917(0x171)]=_0x24f57d[0x1];for(i=0x1;i++;i<0x24){document[_0x5cf917(0x192)]('tab2')[_0x5cf917(0x17d)][0x5]['cells'][i][_0x5cf917(0x171)]=_0x24f57d[i];}}),socket['on'](_0x3fe27f(0x172),function(_0x572822){var _0x3b0445=_0x3fe27f;console[_0x3b0445(0x167)](_0x3b0445(0x185)),console['log'](_0x3b0445(0x172),_0x572822),document['getElementById'](_0x3b0445(0x166))['rows'][0x6][_0x3b0445(0x17b)][0x1][_0x3b0445(0x171)]=_0x572822[0x1];for(i=0x1;i++;i<0x24){document[_0x3b0445(0x192)]('tab2')[_0x3b0445(0x17d)][0x6][_0x3b0445(0x17b)][i][_0x3b0445(0x171)]=_0x572822[i];}}),socket['on'](_0x3fe27f(0x179),function(_0x24a55a){var _0x4c002a=_0x3fe27f;console[_0x4c002a(0x167)]('socket'),console[_0x4c002a(0x167)](_0x4c002a(0x179),_0x24a55a),document[_0x4c002a(0x192)](_0x4c002a(0x166))[_0x4c002a(0x17d)][0x7]['cells'][0x1][_0x4c002a(0x171)]=_0x24a55a[0x1];for(i=0x1;i++;i<0x24){document[_0x4c002a(0x192)](_0x4c002a(0x166))['rows'][0x7][_0x4c002a(0x17b)][i][_0x4c002a(0x171)]=_0x24a55a[i];}}),socket['on']('plc7_',function(_0x521d94){var _0x525192=_0x3fe27f;console[_0x525192(0x167)](_0x525192(0x185)),console['log'](_0x525192(0x165),_0x521d94),document[_0x525192(0x192)](_0x525192(0x166))[_0x525192(0x17d)][0x8]['cells'][0x1][_0x525192(0x171)]=_0x521d94[0x1];for(i=0x1;i++;i<0x24){document[_0x525192(0x192)](_0x525192(0x166))[_0x525192(0x17d)][0x8][_0x525192(0x17b)][i][_0x525192(0x171)]=_0x521d94[i];}}),socket['on'](_0x3fe27f(0x16f),function(_0x384b55){var _0x49c9e9=_0x3fe27f;console[_0x49c9e9(0x167)](_0x49c9e9(0x16f),_0x384b55),document[_0x49c9e9(0x192)](_0x49c9e9(0x166))['rows'][0x9][_0x49c9e9(0x17b)][0x1][_0x49c9e9(0x171)]=_0x384b55[0x1];for(i=0x1;i++;i<0x24){document[_0x49c9e9(0x192)](_0x49c9e9(0x166))[_0x49c9e9(0x17d)][0x9]['cells'][i][_0x49c9e9(0x171)]=_0x384b55[i];}});var table_=document[_0x3fe27f(0x192)](_0x3fe27f(0x166));socket['on'](_0x3fe27f(0x190),function(_0x1d0904){var _0x2a8d02=_0x3fe27f;_0x1d0904[0x1]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x1-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x3e1cbd=_0x2a8d02;table_[_0x3e1cbd(0x17d)][0x2][_0x3e1cbd(0x191)]('td')[0x1-0x1][_0x3e1cbd(0x168)][_0x3e1cbd(0x186)]=_0x3e1cbd(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x2]==0x1&&(table_['rows'][0x2][_0x2a8d02(0x191)]('td')[0x2-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x535327=_0x2a8d02;table_[_0x535327(0x17d)][0x2]['getElementsByTagName']('td')[0x2-0x1][_0x535327(0x168)]['backgroundColor']=_0x535327(0x164);},'5000'));;_0x1d0904[0x3]==0x1&&(table_['rows'][0x2][_0x2a8d02(0x191)]('td')[0x3-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x52b89c=_0x2a8d02;table_['rows'][0x2][_0x52b89c(0x191)]('td')[0x3-0x1][_0x52b89c(0x168)][_0x52b89c(0x186)]=_0x52b89c(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x4]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x4-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x45f80f=_0x2a8d02;table_[_0x45f80f(0x17d)][0x2][_0x45f80f(0x191)]('td')[0x4-0x1][_0x45f80f(0x168)]['backgroundColor']=_0x45f80f(0x164);},'5000'));;_0x1d0904[0x5]==0x1&&(table_['rows'][0x2][_0x2a8d02(0x191)]('td')[0x5-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x3490d8=_0x2a8d02;table_['rows'][0x2]['getElementsByTagName']('td')[0x5-0x1]['style']['backgroundColor']=_0x3490d8(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x6]==0x1&&(table_['rows'][0x2]['getElementsByTagName']('td')[0x6-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x4cc624=_0x2a8d02;table_['rows'][0x2][_0x4cc624(0x191)]('td')[0x6-0x1][_0x4cc624(0x168)][_0x4cc624(0x186)]=_0x4cc624(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x7]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x7-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x38662a=_0x2a8d02;table_[_0x38662a(0x17d)][0x2][_0x38662a(0x191)]('td')[0x7-0x1]['style'][_0x38662a(0x186)]=_0x38662a(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x8]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x8-0x1][_0x2a8d02(0x168)]['backgroundColor']='#32ed41',setTimeout(()=>{var _0x50c161=_0x2a8d02;table_[_0x50c161(0x17d)][0x2][_0x50c161(0x191)]('td')[0x8-0x1][_0x50c161(0x168)][_0x50c161(0x186)]=_0x50c161(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x9]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x9-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x2f480c=_0x2a8d02;table_[_0x2f480c(0x17d)][0x2][_0x2f480c(0x191)]('td')[0x9-0x1]['style'][_0x2f480c(0x186)]=_0x2f480c(0x164);},'5000'));;_0x1d0904[0xa]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0xa-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]='#32ed41',setTimeout(()=>{var _0x8609d=_0x2a8d02;table_['rows'][0x2][_0x8609d(0x191)]('td')[0xa-0x1][_0x8609d(0x168)][_0x8609d(0x186)]=_0x8609d(0x164);},'5000'));;_0x1d0904[0xb]==0x1&&(table_['rows'][0x2][_0x2a8d02(0x191)]('td')[0xb-0x1]['style']['backgroundColor']='#32ed41',setTimeout(()=>{var _0x24fd0c=_0x2a8d02;table_['rows'][0x2][_0x24fd0c(0x191)]('td')[0xb-0x1]['style'][_0x24fd0c(0x186)]=_0x24fd0c(0x164);},'5000'));;_0x1d0904[0xc]==0x1&&(table_['rows'][0x2][_0x2a8d02(0x191)]('td')[0xc-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x5e4800=_0x2a8d02;table_['rows'][0x2][_0x5e4800(0x191)]('td')[0xc-0x1][_0x5e4800(0x168)][_0x5e4800(0x186)]=_0x5e4800(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0xd]==0x1&&(table_['rows'][0x2]['getElementsByTagName']('td')[0xd-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x1c892a=_0x2a8d02;table_[_0x1c892a(0x17d)][0x2]['getElementsByTagName']('td')[0xd-0x1][_0x1c892a(0x168)][_0x1c892a(0x186)]='white';},_0x2a8d02(0x18d)));;_0x1d0904[0xe]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0xe-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x19904a=_0x2a8d02;table_[_0x19904a(0x17d)][0x2][_0x19904a(0x191)]('td')[0xe-0x1]['style'][_0x19904a(0x186)]=_0x19904a(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0xf]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0xf-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x4ca663=_0x2a8d02;table_[_0x4ca663(0x17d)][0x2]['getElementsByTagName']('td')[0xf-0x1]['style']['backgroundColor']=_0x4ca663(0x164);},'5000'));;_0x1d0904[0x10]==0x1&&(table_['rows'][0x2]['getElementsByTagName']('td')[0x10-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]='#32ed41',setTimeout(()=>{var _0x4b8f9f=_0x2a8d02;table_[_0x4b8f9f(0x17d)][0x2][_0x4b8f9f(0x191)]('td')[0x10-0x1][_0x4b8f9f(0x168)][_0x4b8f9f(0x186)]=_0x4b8f9f(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x11]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x11-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]='#32ed41',setTimeout(()=>{var _0x400364=_0x2a8d02;table_[_0x400364(0x17d)][0x2][_0x400364(0x191)]('td')[0x11-0x1][_0x400364(0x168)]['backgroundColor']=_0x400364(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x12]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x12-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x2dae0d=_0x2a8d02;table_[_0x2dae0d(0x17d)][0x2][_0x2dae0d(0x191)]('td')[0x12-0x1][_0x2dae0d(0x168)]['backgroundColor']='white';},_0x2a8d02(0x18d)));;_0x1d0904[0x13]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x13-0x1]['style']['backgroundColor']=_0x2a8d02(0x17c),setTimeout(()=>{var _0x4dc03f=_0x2a8d02;table_['rows'][0x2][_0x4dc03f(0x191)]('td')[0x13-0x1][_0x4dc03f(0x168)]['backgroundColor']='white';},_0x2a8d02(0x18d)));;_0x1d0904[0x14]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x14-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x513d35=_0x2a8d02;table_[_0x513d35(0x17d)][0x2][_0x513d35(0x191)]('td')[0x14-0x1][_0x513d35(0x168)][_0x513d35(0x186)]=_0x513d35(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x15]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x15-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x1d240f=_0x2a8d02;table_[_0x1d240f(0x17d)][0x2][_0x1d240f(0x191)]('td')[0x15-0x1][_0x1d240f(0x168)][_0x1d240f(0x186)]=_0x1d240f(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x16]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x16-0x1][_0x2a8d02(0x168)]['backgroundColor']='#32ed41',setTimeout(()=>{var _0x591797=_0x2a8d02;table_[_0x591797(0x17d)][0x2][_0x591797(0x191)]('td')[0x16-0x1]['style'][_0x591797(0x186)]='white';},'5000'));;_0x1d0904[0x17]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x17-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x562ee6=_0x2a8d02;table_[_0x562ee6(0x17d)][0x2][_0x562ee6(0x191)]('td')[0x17-0x1][_0x562ee6(0x168)][_0x562ee6(0x186)]=_0x562ee6(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x18]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x18-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x1033a8=_0x2a8d02;table_[_0x1033a8(0x17d)][0x2][_0x1033a8(0x191)]('td')[0x18-0x1][_0x1033a8(0x168)]['backgroundColor']=_0x1033a8(0x164);},'5000'));;_0x1d0904[0x19]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x19-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x40bae3=_0x2a8d02;table_[_0x40bae3(0x17d)][0x2][_0x40bae3(0x191)]('td')[0x19-0x1][_0x40bae3(0x168)][_0x40bae3(0x186)]='white';},_0x2a8d02(0x18d)));;_0x1d0904[0x1a]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x1a-0x1]['style']['backgroundColor']=_0x2a8d02(0x17c),setTimeout(()=>{var _0xb4aa42=_0x2a8d02;table_[_0xb4aa42(0x17d)][0x2]['getElementsByTagName']('td')[0x1a-0x1][_0xb4aa42(0x168)][_0xb4aa42(0x186)]=_0xb4aa42(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x1b]==0x1&&(table_['rows'][0x2]['getElementsByTagName']('td')[0x1b-0x1]['style']['backgroundColor']='#32ed41',setTimeout(()=>{var _0x76eb1d=_0x2a8d02;table_[_0x76eb1d(0x17d)][0x2][_0x76eb1d(0x191)]('td')[0x1b-0x1]['style'][_0x76eb1d(0x186)]=_0x76eb1d(0x164);},'5000'));;_0x1d0904[0x1c]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x1c-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x517d08=_0x2a8d02;table_['rows'][0x2][_0x517d08(0x191)]('td')[0x1c-0x1][_0x517d08(0x168)][_0x517d08(0x186)]=_0x517d08(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x1d]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x1d-0x1][_0x2a8d02(0x168)]['backgroundColor']='#32ed41',setTimeout(()=>{var _0x581b7c=_0x2a8d02;table_[_0x581b7c(0x17d)][0x2]['getElementsByTagName']('td')[0x1d-0x1][_0x581b7c(0x168)][_0x581b7c(0x186)]=_0x581b7c(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x1e]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x1e-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x41bd76=_0x2a8d02;table_[_0x41bd76(0x17d)][0x2][_0x41bd76(0x191)]('td')[0x1e-0x1]['style'][_0x41bd76(0x186)]=_0x41bd76(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x1f]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x1f-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x161611=_0x2a8d02;table_['rows'][0x2]['getElementsByTagName']('td')[0x1f-0x1][_0x161611(0x168)][_0x161611(0x186)]='white';},_0x2a8d02(0x18d)));;_0x1d0904[0x20]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x20-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]='#32ed41',setTimeout(()=>{var _0x4d600b=_0x2a8d02;table_[_0x4d600b(0x17d)][0x2][_0x4d600b(0x191)]('td')[0x20-0x1][_0x4d600b(0x168)][_0x4d600b(0x186)]=_0x4d600b(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x21]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x21-0x1][_0x2a8d02(0x168)]['backgroundColor']='#32ed41',setTimeout(()=>{var _0x2f75d5=_0x2a8d02;table_[_0x2f75d5(0x17d)][0x2][_0x2f75d5(0x191)]('td')[0x21-0x1][_0x2f75d5(0x168)]['backgroundColor']=_0x2f75d5(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x22]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x22-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x468d0b=_0x2a8d02;table_[_0x468d0b(0x17d)][0x2][_0x468d0b(0x191)]('td')[0x22-0x1][_0x468d0b(0x168)]['backgroundColor']='white';},_0x2a8d02(0x18d)));;_0x1d0904[0x23]==0x1&&(table_[_0x2a8d02(0x17d)][0x2][_0x2a8d02(0x191)]('td')[0x23-0x1]['style'][_0x2a8d02(0x186)]=_0x2a8d02(0x17c),setTimeout(()=>{var _0x170ad2=_0x2a8d02;table_[_0x170ad2(0x17d)][0x2][_0x170ad2(0x191)]('td')[0x23-0x1][_0x170ad2(0x168)][_0x170ad2(0x186)]=_0x170ad2(0x164);},_0x2a8d02(0x18d)));;_0x1d0904[0x24]==0x1&&(table_[_0x2a8d02(0x17d)][0x2]['getElementsByTagName']('td')[0x24-0x1][_0x2a8d02(0x168)][_0x2a8d02(0x186)]='#32ed41',setTimeout(()=>{var _0x306b1b=_0x2a8d02;table_[_0x306b1b(0x17d)][0x2][_0x306b1b(0x191)]('td')[0x24-0x1][_0x306b1b(0x168)][_0x306b1b(0x186)]=_0x306b1b(0x164);},'5000'));;});
+</script>            <!--script onload="chart100()"-->
+ <!--     DIV2 SPA   -->
+
+<!-- div2 row 3  end  -->
+<!-- div2 row 4  -->
+
+
+<!-- div2 row 3  end  -->
+
+<!--Boots div2   end-->
+
+
+
+  </div>
+  <!--Div3-->
+
+  <!--div3  end-->
+  <script>
+/*
+    setInterval( function() {
+  //   conn1.readAllItems(valuesReady1);
+  //   conn2.readAllItems(valuesReady2);
+  //console.clear();
+  console.log("sdgjdlgkj")
+    }, 500);
+
+    */
+      setInterval(function(){
+  
+
+  }, 1000);
+  </script>
+   <!--     DIV2 SPA END  -->
+<!--data generator-->
+
+  
+<!--data generator  end-->
+
+
+
+
+
+<!--*************  full Screen************  -->
+<!--input type="button"      value="Fullscreen" onclick="toggleFullScreen()"  style="position: absolute;left: 1430px;  top: 30px;  background-COLOR:#141B2D; bORDER-COLOR: BLACK;color:#626C81;   " -->
+
+<!--************* full screen************  -->
+<script src="main.js"></script>
+<script src="/node_modules/jquery/src/"></script>
+<script src="/jquery.min.js"></script>
+</body>

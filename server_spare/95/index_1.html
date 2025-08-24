@@ -1,0 +1,1256 @@
+<!DOCTYPE html> 
+      
+<html lang="en">
+<head>
+  <title>Food Packaging</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+
+
+  <!--link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+ <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" >
+
+<!--script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script-->
+
+
+
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script-->
+  <script src="./Chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!--datetime picker-->
+	<!--script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script-->
+
+	<!-- CSS CDN -->
+
+	<!--link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" /-->
+	<!--link rel="stylesheet"
+		href=
+"./datetimepicker.min.css" /-->
+
+
+	<!-- datetimepicker jQuery CDN -->
+	<!--script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+	</script-->
+  <!--script src=
+"./datetimepicker.full.min.js">
+	</script-->
+
+  <!--   datetime picker end   -->
+
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  /*
+  .jumbotron text-center {
+    height: 20px;
+}
+*/
+    .container {
+      /*  max-width: (1900px - @grid-gutter-width);   */
+      width: 90%;
+    min-width: 99%;
+    max-width: 100%;
+    margin-left: 7px;
+  /*  margin-right: 15px;    */
+    }
+  </style>
+</head>
+<body onload="myFunction1(),myFunction2()">  
+  <script>
+
+
+   // var donut=5;
+    var socket = io();
+
+    socket.on('message', function(msg){
+    //  console.log(msg);
+    //  console.log("msg");
+
+     // document.getElementById("1_1_6_1").innerHTML = msg;
+  //   document.getElementById("1_1_6_1").innerHTML = msg[0].num;
+    // console.log("msg.num",msg[0].num);
+   //  donut=msg[0].donut;
+   //  console.log("donut",msg[0].donut);
+   //  chart1();
+    });
+     </script>
+
+
+
+
+
+    <!--div c  ass="jumbotron text-center" style="margin-bottom:0; height: 80px;"-->
+<!--div class="jumbotron text-center" style="height: 5vh;margin-top: -25px;"-->
+  <h6 style="margin-top:5px">  <!--button class="save" mat-raised-button style=" background-COLOR:#222a2a00; bORDER-COLOR: rgb(119, 140, 185);color:#626C81;  position: absolute;  right: 0; "  onclick="toggleFullScreen()">Full</button--><!--RADI BUTTON U FLEXU--> 
+  </h6>
+
+  <!--p>Resize this responsive page to see the effect!</p--> 
+<!--/div-->
+<!--Ajvar pocetak*******************************************************************************-->
+<button id="addBtn201" class="btn btn-sm btn-primary">/b201</button>
+<button id="addBtn202" class="btn btn-sm btn-primary">/b202</button>
+<button id="addBtn203" class="btn btn-sm btn-primary">/b203</button>
+<button id="addBtn204" class="btn btn-sm btn-primary">/b204</button>
+<button id="addBtn205" class="btn btn-sm btn-primary">/b205</button>
+<script>
+
+  
+  // $('#div3').hide();
+</script>
+ <!--     DIV1 SPA  -->
+
+
+<style>
+.overlay{
+    opacity:0.9;
+ /*   background-color:#ccc;    */
+    position:fixed;
+    width:100%;
+    height:90%;
+    top:40px;
+    left:0px;
+    z-index:1000;
+}
+</style>
+<div class="row" name="aj"style="height: 55vh;">      
+  <div class="col-sm-4" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 30%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+      
+      <!--button id="addBtn6" class="btn btn-sm btn-primary">Last Hour</button>
+      <button id="addBtn7" class="btn btn-sm btn-primary">This Shift</button>
+      <button id="addBtn8" class="btn btn-sm btn-primary">This Week</button>
+      <button id="addBtn9" class="btn btn-sm btn-primary">This Month</button-->
+        <button id="addBtn5" class="btn btn-sm btn-primary">Period</button>
+        <button id="addBtn200" class="btn btn-sm btn-primary">/b200</button>
+
+        <h4 id="1500"style="font-weight: bold;">WINE PROD</h4>
+        <!--p id="server">SERVER</p-->
+        <!--p style="font-weight: bold;">1200 20</p-->
+<p id="server" style="font-size: 10px;font-weight: bold;";
+              font-weight: bold;>SERVER</p>
+    </div>
+   
+    <!--button id="addBtn1"style="visibility : hidden"; >Ajvar_1</button-->
+    <!--button onclick="myFunction2()"class='child inline-block-child'>Click2</button-->
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+  <script src="./jquery1.min.js"></script>
+
+        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"--><!--bilo je-->
+          </script>
+        
+          <!-- CSS CDN -->
+          <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" /-->
+          <link rel="stylesheet" href="./datetimepicker.min.css" />
+
+
+          <!-- datetimepicker jQuery CDN -->
+          <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"> </script-->
+     <script src="./datetimepicker1.full.min.js"></script>
+
+             <!--script src="/public/datetimepicker.js"--> 
+        
+          <!-- Basic internal styling -->
+          <style>
+            body {
+              text-align: center;
+            }
+        
+            p {
+              font-size: 25px;
+              font-weight: bold;
+            }
+          </style>
+        </head>
+        
+        <body>
+       
+        
+         <style>
+        .de{ display: block; }
+        
+         </style>   
+          <input type="text" class="datetimepicker1 de"  id="meeting-time"style="font: 1em sans-serif; max-width: 140px;"/>
+          <input type="text" class="datetimepicker2  de"  id="meeting-time1"style="font: 1em sans-serif; max-width: 140px;"/>
+        
+          <script type="text/javascript">
+        
+        /*
+            $(".datetimepicker").each(function () {
+              $(this).datetimepicker();
+            });
+             */ 
+               
+                $(".datetimepicker1").datetimepicker(function () {
+              $(this).datetimepicker();
+                  //  defaultDate:'+03.01.1970'
+            }); 
+                 $(".datetimepicker2").datetimepicker(function () {
+              $(this).datetimepicker();
+            });
+                $('.datetimepicker1').datetimepicker({
+                
+        });
+
+              $('.datetimepicker1').datetimepicker({
+
+	formatTime:'H:i',
+	formatDate:'d.m.Y',
+
+format: 'Y-m-d H:i'
+});
+$('.datetimepicker2').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+dayOfWeekStart: 1,
+
+format: 'Y-m-d H:i'
+});
+$( ".selector" ).datepicker({ firstDay: 5 });
+       </script>
+
+         </div>
+   
+    <!--div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+     
+      
+       <div class="wrapper"><select name="Nr"  id="place" class="form-control" onfocus='this.size=6;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div-->
+
+
+  
+<!--textarea id="text1" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea-->
+<script>
+ 
+   document.getElementById("text1").readOnly = true;
+ document.getElementById("text1").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1500', function(msg){
+  document.getElementById("1500").style.color = '#03fc66';
+});
+socket.on('conn_1500b', function(msg){
+  document.getElementById("1500").style.color = 'red'; 
+});
+socket.on('conn_1200', function(msg){
+  document.getElementById("1200").style.color = '#b1fc03';
+});
+socket.on('conn_1200b', function(msg){
+  document.getElementById("1200").style.color = 'red'; 
+});
+socket.on('plc3', function(msg){
+  var table = document.getElementById("table");
+
+
+
+
+});
+socket.on('plc', function(msg){
+
+  console.log("socket");
+  console.log(msg);
+  console.log("msg");
+
+
+});
+
+</script>
+
+
+
+  </div>
+  <div class="col-sm-8"name="aj2">
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+      <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+
+
+   
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+  
+  <table style="max-width: inherit;"id="tab1">
+    <caption>
+      Parts by Hours Line 1
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 1</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+<script>
+
+
+
+
+  $(window).on('load', function() {
+ 
+ myFunction1()
+ myFunction2()
+});
+
+
+
+</script>
+       <script type="text/javascript">
+     
+     /*
+         $(".datetimepicker").each(function () {
+           $(this).datetimepicker();
+         });
+          */ 
+            
+             $(".datetimepicker3").datetimepicker(function () {
+           $(this).datetimepicker();
+               //  defaultDate:'+03.01.1970'
+         }); 
+              $(".datetimepicker4").datetimepicker(function () {
+           $(this).datetimepicker();
+         });
+             $('.datetimepicker3').datetimepicker({
+             
+     });
+
+           $('.datetimepicker3').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+$('.datetimepicker4').datetimepicker({
+
+formatTime:'H:i',
+formatDate:'d.m.Y',
+//defaultDate:'8.12.1986', // it's my birthday
+//	defaultDate:'+03.01.1970', // it's my birthday
+// defaultTime:'10:00',
+//	timepickerScrollbar:false,
+//	value:'2018-04-15 05:03',  //   bilo je 
+//value:a_s_g,
+//value: myFunction1(a),
+//	format: dateFormat
+//format: 'DD/MM/YYYY'
+//format: 'D/M/Y'///  ok
+format: 'Y-m-d H:i'
+});
+
+    </script>
+<script>
+ 
+   document.getElementById("text1_").readOnly = true;
+ //  document.getElementById("text1").innerHTML = "neki textyxcyxcycxycyxcyxcyxcyxcycxyxcyccycycyxcyxc";
+ document.getElementById("text1_").innerHTML = "";
+
+
+ ///  socket//**//*/*/*//*
+ var socket = io();
+
+socket.on('plc2', function(msg){
+console.log("socket");
+console.log("plc2",msg);
+});
+socket.on('conn_1200', function(msg){
+ // document.getElementById("table").;
+  //document.getElementById("1200").style.color = 'green';   //#03fc7f
+  document.getElementById("1200").style.color = '#b1fc03'; 
+
+});
+socket.on('conn_1200b', function(msg){
+ // document.getElementById("table").;
+  document.getElementById("1200").style.color = 'red';
+
+});
+socket.on('plc3', function(msg){
+ // var table = document.getElementById("table");
+
+
+
+
+});
+socket.on('plc', function(msg){
+
+
+
+
+});
+
+</script>
+  <style>
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  max-width: 40px;  
+ /* letter-spacing: 1px;  */
+
+   /* width: 100px;  */
+}
+
+caption {
+  caption-side: bottom;
+  padding: 1px;  
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+ /* max-width: 10cqmax;   /*  dodato */
+/*    padding: 4px;   */ 
+padding: 2pt; 
+
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+        </style>
+        <!--NOVI ROW  VINO-->
+<div class="row" name="aj"style="height: 60vh;">      
+
+</div>
+
+<!--NOVI ROW  VINO  KRAJ-->
+<!--NOVI ROW  VINO-->
+<div class="row" name="aj"style="height: 60vh;">      
+  <div class="col-sm-5" style="margin-top:5px; display: flex; flex-direction: row; gap: 3px;max-height: 40px;height: 10%;"name="aj1">
+    <div style="display: flex;flex-direction: column;min-height: 20vh;gap: 1%;">
+
+        <button id="addBtn55" class="btn btn-sm btn-primary">Period</button>
+
+    
+        <button id="addBtn200_" class="btn btn-sm btn-primary">/b202</button>
+        <h4 style="font-weight: bold;" id="1200">PLC 12</h4>
+       
+       
+
+    </div>
+   
+
+   
+ 
+    <style>
+      label {
+        display:flex;
+        flex-direction:column;
+      /*  display: block;   */
+    /*  display:flow-root;  */
+        font:
+          0.8rem 'Fira Sans',
+          sans-serif;
+      }
+      
+      input,
+      label {
+        font:
+        0.8rem 'Fira Sans'
+      /*  margin: 0.4rem 0;   */
+      }
+      
+      
+       </style>
+      
+         <!--label for="meeting-time">Choose a time :</label-->
+         <!--div  style="margin-top:5px; display: flex; flex-direction: column; gap: 1px;max-height: 20px;"-->
+         <div  style=" display: flex; flex-direction: column; ;max-height: 15px;">
+      <!--input
+        type="datetime-local"
+        id="meeting-time_"
+        name="meeting-time"
+        value="2025-04-06T15:12"
+        min="2018-06-07T00:00"
+        max="2026-06-14T00:00" /-->
+       <!--NEW   INPUT-->
+       <!--input
+       type="datetime-local"
+       id="meeting-time1_"
+       name="meeting-time1"
+       value="2025-04-06T15:12"
+       min="2018-06-07T00:00"
+       max="2026-06-14T00:00" /-->
+
+
+       <input type="text" class="datetimepicker3 de"  id="meeting-time_"style="font: 1em sans-serif;"/>
+       <input type="text" class="datetimepicker4  de"  id="meeting-time1_"style="font: 1em sans-serif;"/>
+     
+
+
+         </div>
+    <!--option   start--><div style=" display: flex; flex-direction: column; ;max-height: 15px;  offset-position: up 20px;">
+      <style>
+
+        .wrapper{
+      width:70px;
+      padding:2px;  
+      height: 150px;
+      }
+       </style>
+       <!--small style=" offset-anchor: 10px;">Place_Nr</small-->
+      
+       <div class="wrapper"><select name="Nr"  id="place_" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+      
+      </select></div>
+      <label for="meeting-time"style="display:flex;flex-direction:column;"> &nbsp&nbsp&nbspPlaceNr:</label>
+
+    </div>
+
+
+  
+<!--input type="text" id="input1" class="form-control" placeholder="new message" style="max-width: 35%;"-->
+<textarea id="text1_" placeholder=""style="max-width: 55%;width: 40%;height: 250%;"></textarea>
+
+
+<!--button id="addBtn15_" class="btn btn-sm btn-primary">Data_2</button-->
+     <!--option   start-->
+  </div>
+  <div class="col-sm-7"name="aj2"><!--button id="addBtn1" >Ajvar_2</button-->
+    <div id="d12345" name="d2" style="border:solid;border-style: groove; width:98%; max-height:95vh; overflow: auto; ">  <!--coment table  -->
+    
+  
+  <table style="max-width: inherit;"id="tab2">
+    <caption>
+      Parts by Hours Line 2
+    </caption>
+    <thead>
+      <tr><td></td>
+        <th scope="row" colspan="37"style="text-align:center">Places Line 2</th>
+        
+      </tr>
+      <tr style='width:2%'>
+        <th scope="col">Hour</th>
+        <th scope="col">&nbsp1</th> <th scope="col">&nbsp2</th><th >&nbsp3</th> <th >&nbsp4</th> <th>&nbsp5</th> <th >&nbsp6</th> <th>&nbsp7</th> <th>&nbsp8</th> <th>&nbsp9</th><th>10</th> 
+        <th>11</th><th>12</th><th>13</th> <th>14</th> <th>15</th> <th >16</th> <th>17</th> <th>18</th> <th>19</th><th>20</th> 
+        <th>21</th><th>22</th> <th>23</th> <th>24</th> <th>25</th> <th >26</th> <th>27</th> <th>28</th> <th>29</th><th>30</th>
+        <th>31</th> <th>32</th> <th>33</th> <th>34</th> <th>35</th> <th >36</th> <th >37opt</th> 
+        <!--th scope="col">Age</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">-1</th>
+        <td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-2</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <th scope="row">-3</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">-4</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">-5</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-6</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+       
+      </tr> <tr>
+        <th scope="row">-7</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr> <tr>
+        <th scope="row">-8</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2"></th>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+    </div>
+  
+  </div>
+</div>
+
+<!--NOVI ROW  VINO  KRAJ-->
+
+
+
+
+<script>
+
+
+
+
+</script>
+<!--Ajvar kraj 22-->
+<!--div class="container" style="margin-top:5px;margin-left: 15px"-->
+
+
+
+ <!--     DIV1 SPA END  -->
+
+<script>
+ 
+ socket.on('cons',function(msg){
+console.log("SERVER_MSG: ",msg)
+ })
+///prvi plc 1500
+ socket.on('plc1', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1 , msg.1",msg[1]);
+
+document.getElementById("tab1").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2",msg);
+
+document.getElementById("tab1").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3",msg);
+
+document.getElementById("tab1").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4",msg);
+
+document.getElementById("tab1").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5",msg);
+
+document.getElementById("tab1").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6",msg);
+
+document.getElementById("tab1").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7",msg);
+
+document.getElementById("tab1").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8', function(msg){
+
+console.log("socket");
+console.log("plc8",msg);
+
+document.getElementById("tab1").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab1").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table = document.getElementById("tab1");
+socket.on('colo', function(msg){
+//console.log("colo : ",msg);
+
+       if(msg[1]==1){table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+//document.getElementById("tab1").rows[1].cells[i].backgroundColor='#65d457'
+////drugi plc
+
+socket.on('plc1_', function(msg){
+
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc1_",msg);
+//console.log("plc1 , msg.1",msg);
+console.log("plc1_ , msg.1",msg[1]);
+
+document.getElementById("tab2").rows[2].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[2].cells[i].innerHTML=msg[i];}
+
+});
+socket.on('plc2_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc2_",msg);
+
+document.getElementById("tab2").rows[3].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[3].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc3_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc3_",msg);
+
+document.getElementById("tab2").rows[4].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[4].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc4_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc4_",msg);
+
+document.getElementById("tab2").rows[5].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[5].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc5_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc5_",msg);
+
+document.getElementById("tab2").rows[6].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[6].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+
+socket.on('plc6_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc6_",msg);
+
+document.getElementById("tab2").rows[7].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[7].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc7_', function(msg){
+//ob=JSON.parse(msg);
+console.log("socket");
+console.log("plc7_",msg);
+
+document.getElementById("tab2").rows[8].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[8].cells[i].innerHTML=msg[i];}
+//table.rows[2].getElementsByTagName("td")[1].innerHTML =msg[1];
+});
+socket.on('plc8_', function(msg){
+
+//console.log("socket");
+console.log("plc8_",msg);
+
+document.getElementById("tab2").rows[9].cells[1].innerHTML=msg[1];
+for(i=1; i++; i<36){document.getElementById("tab2").rows[9].cells[i].innerHTML=msg[i];}
+
+});
+var table_ = document.getElementById("tab2");
+socket.on('colo_', function(msg){
+//console.log("colo_ : ",msg);
+
+       if(msg[1]==1){table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[1-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[2]==1){table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[2-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+       if(msg[3]==1){table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[3-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[4]==1){table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[4-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[5]==1){table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[5-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[6]==1){table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[6-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+     if(msg[7]==1){table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[7-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[8]==1){table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[8-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[9]==1){table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[9-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+      if(msg[10]==1){table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[10-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[11]==1){table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[11-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[12]==1){table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[12-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[13]==1){table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[13-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[14]==1){table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[14-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[15]==1){table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[15-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[16]==1){table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[16-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[17]==1){table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[17-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[18]==1){table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[18-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[19]==1){table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[19-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[20]==1){table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[20-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[21]==1){table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[21-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[22]==1){table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[22-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[23]==1){table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[23-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[24]==1){table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[24-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[25]==1){table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[25-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[26]==1){table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[26-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[27]==1){table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[27-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[28]==1){table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[28-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[29]==1){table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[29-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[30]==1){table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[30-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[31]==1){table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[31-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[32]==1){table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[32-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[33]==1){table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[33-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[34]==1){table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[34-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[35]==1){table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[35-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+  if(msg[36]==1){table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = '#32ed41';
+  setTimeout(() => { table_.rows[2].getElementsByTagName("td")[36-1].style.backgroundColor = 'white';   }, "5000"); };   // rgb(228 240 245)  rgb(160 160 160)'white'    #edeef2
+
+});
+
+</script>            <!--script onload="chart100()"-->
+ <!--     DIV2 SPA   -->
+
+<!-- div2 row 3  end  -->
+<!-- div2 row 4  -->
+
+
+<!-- div2 row 3  end  -->
+
+<!--Boots div2   end-->
+
+
+
+  </div>
+  <!--Div3-->
+
+  <!--div3  end-->
+  <script>
+/*
+    setInterval( function() {
+  //   conn1.readAllItems(valuesReady1);
+  //   conn2.readAllItems(valuesReady2);
+  //console.clear();
+  console.log("sdgjdlgkj")
+    }, 500);
+
+    */
+      setInterval(function(){
+  
+
+  }, 1000);
+  </script>
+   <!--     DIV2 SPA END  -->
+<!--data generator-->
+
+  
+<!--data generator  end-->
+
+
+
+
+
+<!--*************  full Screen************  -->
+<!--input type="button"      value="Fullscreen" onclick="toggleFullScreen()"  style="position: absolute;left: 1430px;  top: 30px;  background-COLOR:#141B2D; bORDER-COLOR: BLACK;color:#626C81;   " -->
+<script>
+  function toggleFullScreen() {
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+ (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+  if (document.documentElement.requestFullScreen) {  
+    document.documentElement.requestFullScreen();  
+  } else if (document.documentElement.mozRequestFullScreen) {  
+    document.documentElement.mozRequestFullScreen();  
+  } else if (document.documentElement.webkitRequestFullScreen) {  
+    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+  }  
+} else {  
+  if (document.cancelFullScreen) {  
+    document.cancelFullScreen();  
+  } else if (document.mozCancelFullScreen) {  
+    document.mozCancelFullScreen();  
+  } else if (document.webkitCancelFullScreen) {  
+    document.webkitCancelFullScreen();  
+  }  
+}  
+}
+
+</script>
+<!--************* full screen************  -->
+<script src="main.js"></script>
+<script src="/node_modules/jquery/src/"></script>
+<script src="/jquery.min.js"></script>
+</body>
